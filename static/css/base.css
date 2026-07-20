@@ -37,15 +37,20 @@ img {
 }
 
 .site-header {
-  padding: 1.25rem 1.5rem 4.75rem;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
+  padding: 1rem 1rem 1rem;
 }
 
 .site-nav {
   max-width: var(--page-max);
   margin: 0 auto;
+  position: fixed;
+  top: 0.75rem;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(var(--page-max), calc(100% - 2.5rem));
+  padding: 0.55rem 0.9rem;
+  border-radius: 999px;
+  z-index: 1100;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -1107,6 +1112,16 @@ details[open] summary::before {
   }
 
   .site-nav {
+    position: static;
+    top: auto;
+    left: auto;
+    transform: none;
+    width: auto;
+    padding: 0;
+    border-radius: 0;
+    border: 0;
+    box-shadow: none;
+    backdrop-filter: none;
     justify-content: flex-end;
     overflow: visible;
   }
@@ -1223,6 +1238,10 @@ body.conference-site .site-main {
 }
 
 body.conference-site .site-nav {
+  background: rgba(248, 247, 242, 0.9);
+  border: 1px solid rgba(13, 26, 43, 0.12);
+  box-shadow: 0 12px 30px rgba(13, 26, 43, 0.08);
+  backdrop-filter: blur(12px);
   gap: 0.85rem;
   flex-wrap: wrap;
 }

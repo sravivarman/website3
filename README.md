@@ -136,6 +136,20 @@ Use one of these options:
 
 This repository also includes a root `index.html` redirect to `docs/` so root-based publishing does not fall back to README.
 
+### If you see this error in Pages logs
+
+`No such file or directory @ dir_chdir0 - /github/workspace/docs`
+
+It means GitHub Pages is trying to build from `/docs` but that folder is missing in the pushed commit.
+
+Fix:
+
+1. Run `make build-pages`.
+2. Commit the generated `docs/` folder.
+3. Push to `main`.
+
+Or switch Pages source to **GitHub Actions** to deploy from workflow artifacts instead of the branch folder.
+
 This runs the source consistency check, rebuilds the site, verifies `dist/index.html` exists, and prints git status.
 
 ## Editing the Website

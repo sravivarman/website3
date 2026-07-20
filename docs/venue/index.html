@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ICEVSG 2026 | International Conference on Electric Vehicles and Smart Grid</title>
+
+  <!-- Built stylesheet: base layout plus the configured theme -->
+  <link rel="stylesheet" href="../css/site.css?v=5cee23179be6" />
+</head>
+<body class="conference-site">
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="site-brand" href="../">ICEVSG 2026</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+      <div id="site-nav-links" class="site-nav-links" data-site-nav-links>
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../program/">Program</a>
+        <a href="../speakers/">Speakers</a>
+        <a href="../venue/">Venue</a>
+        <a href="../registration/">Registration</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </nav>
+
+
+  </header>
+
+  <!-- ===== Main content (filled in by child templates) ===== -->
+  <main class="site-main">
+
+<section class="section page-intro">
+  <p class="page-kicker">Venue</p>
+  <h1>Hosted in Detroit, with transit access and nearby hotels</h1>
+
+  <div class="page-summary"><p>The conference venue was selected for walkability, transit access, and straightforward travel from the airport and regional rail connections.</p></div>
+
+
+</section>
+
+
+<section class="section">
+  <h2>Conference venue</h2>
+
+
+
+
+  <div class="info-grid">
+
+    <article class="info-card">
+
+      <p class="writing-meta">On site</p>
+
+      <h3>Main hall and breakouts</h3>
+
+
+      <div class="article-content"><p>Keynotes, panels, and technical sessions will take place in the Fisher Center conference spaces.</p></div>
+
+    </article>
+
+    <article class="info-card">
+
+      <p class="writing-meta">On site</p>
+
+      <h3>Accessibility</h3>
+
+
+      <div class="article-content"><p>Step-free access, accessible restrooms, quiet spaces, and assistive seating will be available.</p></div>
+
+    </article>
+
+    <article class="info-card">
+
+      <p class="writing-meta">On site</p>
+
+      <h3>Technology</h3>
+
+
+      <div class="article-content"><p>High-speed Wi-Fi, projection, and poster/demo areas are included throughout the venue.</p></div>
+
+    </article>
+
+  </div>
+
+
+
+
+
+</section>
+
+<section class="section">
+  <h2>Travel and lodging</h2>
+
+
+
+
+
+
+  <div class="about-card single-column">
+    <div class="article-content">
+      <ul>
+
+        <li>Detroit Metro Airport is the primary airport for domestic and international travel.</li>
+
+        <li>Rideshare, hotel shuttles, and regional transit can connect attendees to the venue.</li>
+
+        <li>A block of rooms will be reserved at nearby hotels with conference rates.</li>
+
+        <li>Local parking instructions and transit maps will be shared after registration.</li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+</section>
+
+<section class="section">
+  <h2>A low-carbon event</h2>
+
+
+
+
+
+
+  <div class="about-card single-column">
+    <div class="article-content">
+      <ul>
+
+        <li>Digital program materials will be provided to reduce printed waste.</li>
+
+        <li>Water stations and reusable materials will be prioritized onsite.</li>
+
+        <li>Food service will include plant-forward options and allergen labeling.</li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+</section>
+
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 ICEVSG 2026. Hosted by the Center for Sustainable Mobility and Global Energy Systems Alliance.</p>
+  </footer>
+  <script>
+    (() => {
+      const nav = document.querySelector(".site-nav");
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const links = document.querySelector("[data-site-nav-links]");
+      if (!nav || !toggle || !links) return;
+
+      const closeMenu = () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      links.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 820) closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

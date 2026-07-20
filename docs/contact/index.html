@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ICEVSG 2026 | International Conference on Electric Vehicles and Smart Grid</title>
+
+  <!-- Built stylesheet: base layout plus the configured theme -->
+  <link rel="stylesheet" href="../css/site.css?v=5cee23179be6" />
+</head>
+<body class="conference-site">
+
+  <header class="site-header">
+    <nav class="site-nav">
+      <a class="site-brand" href="../">ICEVSG 2026</a>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+      <div id="site-nav-links" class="site-nav-links" data-site-nav-links>
+        <a href="../">Home</a>
+        <a href="../about/">About</a>
+        <a href="../program/">Program</a>
+        <a href="../speakers/">Speakers</a>
+        <a href="../venue/">Venue</a>
+        <a href="../registration/">Registration</a>
+        <a href="../contact/">Contact</a>
+      </div>
+    </nav>
+
+
+  </header>
+
+  <!-- ===== Main content (filled in by child templates) ===== -->
+  <main class="site-main">
+
+<section class="section page-intro">
+  <p class="page-kicker">Contact</p>
+  <h1>Reach the organizers for registration, program, or sponsorship questions</h1>
+
+  <div class="page-summary"><p>The organizing team can help with speaker requests, accessibility needs, sponsorship packages, press inquiries, and registration problems.</p></div>
+
+
+</section>
+
+
+<section class="section">
+  <h2>Organizing committee</h2>
+
+
+
+
+  <div class="info-grid">
+
+    <article class="info-card">
+
+      <p class="writing-meta">Program and logistics</p>
+
+      <h3>General inquiries</h3>
+
+
+      <div class="article-content"><p>Email <a href="mailto:icevsg2026@example.org">icevsg2026@example.org</a> for registration and agenda questions.</p></div>
+
+    </article>
+
+    <article class="info-card">
+
+      <p class="writing-meta">Partnerships</p>
+
+      <h3>Sponsorship</h3>
+
+
+      <div class="article-content"><p>Email <a href="mailto:partners@icevsg2026.example.org">partners@icevsg2026.example.org</a> to request the sponsor prospectus.</p></div>
+
+    </article>
+
+    <article class="info-card">
+
+      <p class="writing-meta">Communications</p>
+
+      <h3>Press and media</h3>
+
+
+      <div class="article-content"><p>Email <a href="mailto:media@icevsg2026.example.org">media@icevsg2026.example.org</a> for press access and interviews.</p></div>
+
+    </article>
+
+  </div>
+
+
+
+
+
+</section>
+
+<section class="section">
+  <h2>Office details</h2>
+
+
+
+
+
+
+  <div class="about-card single-column">
+    <div class="article-content">
+      <ul>
+
+        <li>Address: Wayne State University, Detroit, Michigan, USA</li>
+
+        <li>Conference email: icevsg2026@example.org</li>
+
+        <li>Accessibility and accommodation requests are welcome early.</li>
+
+      </ul>
+    </div>
+  </div>
+
+
+
+</section>
+
+
+  </main>
+
+  <!-- ===== Footer ===== -->
+  <footer class="site-footer">
+    <p>&copy; 2026 ICEVSG 2026. Hosted by the Center for Sustainable Mobility and Global Energy Systems Alliance.</p>
+  </footer>
+  <script>
+    (() => {
+      const nav = document.querySelector(".site-nav");
+      const toggle = document.querySelector("[data-menu-toggle]");
+      const links = document.querySelector("[data-site-nav-links]");
+      if (!nav || !toggle || !links) return;
+
+      const closeMenu = () => {
+        nav.classList.remove("is-open");
+        toggle.setAttribute("aria-expanded", "false");
+      };
+
+      toggle.addEventListener("click", () => {
+        const isOpen = nav.classList.toggle("is-open");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+      });
+
+      links.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", closeMenu);
+      });
+
+      window.addEventListener("resize", () => {
+        if (window.innerWidth > 820) closeMenu();
+      });
+    })();
+  </script>
+</body>
+</html>

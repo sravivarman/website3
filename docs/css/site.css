@@ -1612,6 +1612,11 @@ body.conference-site #program-and-review-committee .info-grid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
+body.conference-site #organizing-committee .info-card h3,
+body.conference-site #program-and-review-committee .info-card h3 {
+  font-size: 1.08rem;
+}
+
 body.conference-site .article-content ul,
 body.conference-site .article-content ol {
   margin-left: 1.15rem;

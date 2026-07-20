@@ -13,32 +13,11 @@ import yaml
 
 
 ROOT = Path(__file__).resolve().parents[1]
-BLOG_DIR = ROOT / "content" / "blog"
 THEME_DIR = ROOT / "static" / "css" / "themes"
 
 
 def load_yaml(path: Path) -> dict:
     return yaml.safe_load(path.read_text(encoding="utf-8")) or {}
-
-
-def check_blog_posts() -> list[str]:
-    errors = []
-    template_path = BLOG_DIR / "post_template.yaml"
-    template_keys = set(load_yaml(template_path))
-
-    for path in sorted(BLOG_DIR.glob("*.yaml")):
-        if path == template_path:
-            continue
-
-        keys = set(load_yaml(path))
-        missing = sorted(template_keys - keys)
-        extra = sorted(keys - template_keys)
-        if missing:
-            errors.append(f"{path.relative_to(ROOT)} is missing template key(s): {', '.join(missing)}")
-        if extra:
-            errors.append(f"{path.relative_to(ROOT)} has non-template key(s): {', '.join(extra)}")
-
-    return errors
 
 
 def css_selectors(path: Path) -> list[str]:
@@ -72,7 +51,7 @@ def check_themes() -> list[str]:
 
 
 def main() -> int:
-    errors = check_blog_posts() + check_themes()
+    errors = check_themes()
     if errors:
         print("Consistency check failed:")
         for error in errors:

@@ -1,5 +1,5 @@
 """
-serve.py  —  Local preview server for the built portfolio site.
+serve.py  —  Local preview server for the built conference site.
 
 Usage:
     uv run python serve.py          # serves on http://localhost:8000
@@ -39,7 +39,7 @@ def main() -> None:
     os.chdir(build_dir)
 
     url = f"http://localhost:{port}"
-    print(f"Serving portfolio from  {build_dir.relative_to(ROOT)}/  at  {url}")
+    print(f"Serving conference site from  {build_dir.relative_to(ROOT)}/  at  {url}")
     print("Press Ctrl+C to stop.\n")
 
     # Open the browser automatically

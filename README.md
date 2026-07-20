@@ -1,22 +1,20 @@
-# Arkesh Das Portfolio Website
+# International Conference on Electric Vehicles and Smart Grid
 
-This repository contains the source code and content for my personal portfolio website. It's a static site containing a home-page, blog/writing section, additional pages about research and projects, and a CV experience timeline.
-
-The site started from Devin Silvia's [Professional Portfolio Template](https://github.com/devinsilvia/professional_portfolio_template), but I adapted it into a multi-page website.
+This repository contains the source code and content for a static conference website for the International Conference on Electric Vehicles and Smart Grid.
 
 ## Overview
 
 The site is source-driven. Most content lives in YAML files, the page layouts live in Jinja templates, and `build.py` turns everything into static HTML under `dist/`.
 
-The website has five main pages:
+The website has these main pages:
 
-- **Home**: hero section, featured video, projects, about preview, writing preview, and contact
-- **Scholarship**: research projects, paper/talk links, posters, and research context
-- **CV**: reverse-chronological experience timeline, category filters, coursework reveals, honors, and skills
-- **Writing**: self-hosted essays plus archival links to older posts
-- **About**: a more personal narrative page
-
-The goal of this codebase is to both generate my website and to act as a reproducable template to make a website without manually editing generated HTML. You can also use Google Search Console to generate a HTML tag to make the portfolio searchable on Google. 
+- **Home**: conference highlights, tracks, dates, speakers, and sponsor snapshot
+- **About**: conference purpose and organizing structure
+- **Program**: three-day schedule and session outline
+- **Speakers**: featured keynote and invited speakers
+- **Venue**: travel, accessibility, and sustainability information
+- **Registration**: fee schedule and registration details
+- **Contact**: organizer contact details
 
 ## Repository Structure
 
@@ -27,13 +25,7 @@ The goal of this codebase is to both generate my website and to act as a reprodu
 ├── README.md
 ├── build.py
 ├── content/
-│   ├── about.yaml
-│   ├── arkesh.yaml
-│   ├── blog/
-│   ├── cv.yaml
-│   ├── example_student.yaml
-│   ├── projects/
-│   └── scholarship.yaml
+│   └── conference.yaml
 ├── portfolio_config.yaml
 ├── pyproject.toml
 ├── serve.py
@@ -42,9 +34,9 @@ The goal of this codebase is to both generate my website and to act as a reprodu
 │   ├── img/
 │   └── pdf/
 ├── templates/
-│   ├── macros/
-│   ├── sections/
-│   └── *.html
+│   ├── base.html
+│   ├── index.html
+│   └── page.html
 ├── tools/
 │   └── check_consistency.py
 └── uv.lock
@@ -56,13 +48,7 @@ The goal of this codebase is to both generate my website and to act as a reprodu
 
 This is the main place where site content lives.
 
-- [`content/arkesh.yaml`](content/arkesh.yaml) controls profile data, homepage hero text, contact links, the headshot, and featured video metadata.
-- [`content/scholarship.yaml`](content/scholarship.yaml) controls the Scholarship page.
-- [`content/cv.yaml`](content/cv.yaml) controls the CV timeline, awards, coursework reveals, and skill list.
-- [`content/about.yaml`](content/about.yaml) controls the About page.
-- [`content/projects/`](content/projects/) contains project cards shown on the homepage.
-- [`content/blog/`](content/blog/) contains writing entries and self-hosted post bodies.
-- `content/drafts/` is for local drafts that should not be published.
+- [`content/conference.yaml`](content/conference.yaml) controls the conference pages, homepage content, speakers, registration, and contact details.
 
 #### [`templates/`](templates/)
 
@@ -70,11 +56,7 @@ Jinja templates define the actual page structure.
 
 - [`templates/base.html`](templates/base.html) is the shared page shell.
 - [`templates/index.html`](templates/index.html) assembles homepage sections.
-- [`templates/writing.html`](templates/writing.html) renders the Writing page.
-- [`templates/post.html`](templates/post.html) renders individual writing posts.
-- [`templates/cv.html`](templates/cv.html) renders the timeline, filters, awards, and skills.
-- [`templates/scholarship.html`](templates/scholarship.html) renders the Scholarship page.
-- [`templates/macros/media.html`](templates/macros/media.html) contains reusable blog media helpers.
+- [`templates/page.html`](templates/page.html) renders the generic conference content pages.
 
 #### [`static/`](static/)
 
@@ -143,100 +125,17 @@ This runs the source consistency check, rebuilds the site, verifies `dist/index.
 
 ### Main configuration
 
-[`portfolio_config.yaml`](portfolio_config.yaml) controls which content files are loaded and in what order.
+[`portfolio_config.yaml`](portfolio_config.yaml) controls which content file is loaded and what theme is used.
 
 Important fields include:
 
 ```yaml
-student_file: content/arkesh.yaml
-scholarship_file: content/scholarship.yaml
-cv_file: content/cv.yaml
-about_file: content/about.yaml
-
-projects:
-  - content/projects/MSU_Cirric.yaml
-
-writing_posts:
-  - content/blog/scared.yaml
+conference_file: content/conference.yaml
 
 theme: clinical
-site_title: "Arkesh Das | Portfolio"
+site_title: "ICEVSG 2026 | International Conference on Electric Vehicles and Smart Grid"
 google_site_verification: ""
 ```
-
-The order of `projects` controls the homepage project order. The order of `writing_posts` controls the Writing page and homepage writing preview order.
-
-### Search verification
-
-Google Search Console verification can be added through `portfolio_config.yaml`:
-
-```yaml
-google_site_verification: "your-verification-token"
-```
-
-Paste only the `content` value from Google's meta tag. The build renders it into the shared `<head>` template, so it survives rebuilds and appears on every generated page.
-
-### Writing posts
-
-Each post in `content/blog/` follows the same basic schema:
-
-```yaml
-title:
-date:
-featured:
-show_on_home:
-slug:
-has_original_post:
-original_post_url:
-image_path:
-images:
-media:
-short_summary:
-content:
-```
-
-The `slug` controls the final URL:
-
-```text
-dist/writing/<slug>/index.html
-```
-
-Use `has_original_post: true` when a post has an external original version, such as an old blog post or PDF. Use `has_original_post: false` when the essay only lives on this site.
-
-Set `show_on_home: false` when a post should stay on the Writing page but not appear on the homepage.
-
-### Blog media
-
-Standard Markdown images work inside post content:
-
-```markdown
-![Alt text](img/example.png)
-```
-
-For more controlled placement, use the `media` list:
-
-```yaml
-media:
-  - path: "img/blog/example.png"
-    alt: "Descriptive alt text."
-    caption: "Optional caption."
-    size: large
-    align: center
-    placement: after_summary
-```
-
-Supported sizes are `small`, `medium`, `large`, and `full`.
-
-Supported alignments are `left`, `center`, and `right`.
-
-Supported placements are currently:
-
-- `after_summary` for individual post pages
-- `card` for Writing page cards
-
-### Projects
-
-Project cards live in `content/projects/`.
 
 Each project file includes fields for the title, summary, tech stack, problem statement, approach, impact, links, and image path. Example project files are still included as references, but the live project list is controlled only by `portfolio_config.yaml`.
 

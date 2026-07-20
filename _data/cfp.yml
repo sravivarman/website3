@@ -1,0 +1,47 @@
+description: >
+  ICAANS 2026 provides a platform for academia and industry to present and discuss the latest innovations, trends, challenges, and solutions in intelligent and autonomous systems. We invite researchers, professionals, and industry experts to submit their original, unpublished research contributions that are not under consideration elsewhere. Join us in advancing the agentic AI paradigm and shaping the future of intelligent, ethical, and autonomous technologies.
+
+  All submissions will undergo a single-blind peer review by experts from reputed organizations worldwide. Only nontrivial, unpublished, and original contributions will be considered.
+
+  All accepted and presented papers will be published in the conference proceedings through a reputed international publisher (Springer Nature / CRC Press), subject to final approval.
+
+areas:
+- category: "Track 1: Neuro-Symbolic AI & Cognitive Computing"
+  topics:
+    - Knowledge Representation and Reasoning
+    - Hybrid AI Systems
+    - Explainable AI (XAI)
+    - Cognitive Architectures and Agent-Based Models
+
+- category: "Track 2: Machine Learning & Deep Learning"
+  topics:
+    - Supervised, Unsupervised, and Reinforcement Learning
+    - Deep Neural Networks and Architectures
+    - Transfer Learning and Self-Supervised Learning
+    - AI Applications in Healthcare, Finance, and Industry
+- category: "Track 3: Swarm Intelligence & Multi-Agent Systems"
+  topics:
+    - Particle Swarm Optimization, Ant Colony Optimization
+    - Distributed Intelligent Systems
+    - Cooperative and Collaborative Robotics
+    - Swarm-Based Optimization and Control
+
+- category: "Track 4: Intelligent Systems & Applications"
+  topics:
+    - Autonomous Systems and Robotics
+    - Smart Computing and IoT-Enabled AI
+    - AI in Environmental and Societal Applications
+    - Human–AI Interaction and Intelligent Decision-Making
+- category: "Track 5: Emerging AI Technologies"
+  topics:
+    - AI Ethics, Governance, and Responsible AI
+    - Quantum Computing and AI Integration
+    - AI-Enabled Cybersecurity Solutions
+    - Edge AI and Real-Time Intelligent Systems
+- category: "Track 6: Interdisciplinary Applications of AI"
+  topics:
+    - AI in Healthcare & Biomedical Engineering
+    - AI for Sustainable Development & Environmental Studies
+    - AI in Social Sciences, Humanities, and Education
+    - AI in Business, Economics, and Management
+    - AI for Smart Cities, Agriculture, and Industrial Automation

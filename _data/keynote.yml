@@ -1,0 +1,29 @@
+- name: Dr. Pethuru Raj PhD, SMIEEE
+  title: Principal AI Architect
+  affiliation: Infocion Inc, Bangalore, and Mentor for Doctor of Business Administration (DBA) Students from Golden Gate University, USA
+  image: ./assets/images/speakers/speaker1.png
+
+- name: Dr. A. Subbiah
+  title: Senior Principal Scientist & Professor (ACSIR)
+  affiliation: CSIR-Central Electrochemical Research Institute, Karaikudi 630003, India
+  image: ./assets/images/speakers/speaker3.png
+
+- name: Karthick V
+  title: Associate General Manager
+  affiliation: HCLTech, India
+  image: ./assets/images/speakers/speaker4.png
+
+- name: Dr. M. Pallikonda Rajasekaran
+  title: Director (R&D)
+  affiliation: Kalasalingam Academy of Research and Education, Anand Nagar, Tamil Nadu, India.
+  image: ./assets/images/speakers/speaker6.png
+
+- name: Prof. Muthu Ramachandran
+  title: Cybersecurity, AI, and Blockchain Technology Research Consultant
+  affiliation: Forti5 Technologies, UK & Visiting Professor Extraordinarius at University of South Africa (UniSA)
+  image: ./assets/images/speakers/speaker2.png
+
+- name: Prof. Michael Onyema Edeh
+  title: Professor, Department of Computer Science
+  affiliation: Enugu State University  of Science and Technology, Nigeria
+  image: ./assets/images/speakers/speaker5.png

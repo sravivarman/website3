@@ -1,0 +1,38 @@
+---
+layout: page
+---
+
+<div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 my-2 text-justify conference-text">
+
+        <section class="home-intro-panel">
+            <p class="section-tag mb-2">Conference Overview</p>
+
+            <h5>Welcome to the {{site.data.conference.short_title}}!</h5>
+            <p>
+                {{site.data.conference.description}}
+            </p>
+        </section>
+
+        <section class="home-content-panel">
+            {{content}}
+        </section>
+
+    </div>
+    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 home-sidebar-column">
+        <!-- news -->
+        {% include card-news.html %}
+        <!-- ---- -->
+        <!-- important dates -->
+        {% include card-important-dates.html %}
+        <!-- ---------------- -->
+        <!-- publishing partners -->
+        {% include card-publishing-partners.html %}
+        <!-- ------------------- -->
+        <!-- contact -->
+        {% include contact-us.html %}
+        <!-- ------- -->
+    </div>
+</div>
+
+<!-- {% include sponsors.html %} -->

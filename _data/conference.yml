@@ -1,0 +1,106 @@
+full_name: International Conference on Advancing Agentic AI Paradigm through Neuro-Symbolic AI and Swarm Intelligence
+short_name: ICAANS
+description: > # this means to ignore newlines until "baseurl:"
+  The 1st Multidisciplinary International Conference on Advancing Agentic AI Paradigm through Neuro-Symbolic AI, Machine Learning, Deep Learning, and Swarm Intelligence (ICAANS 2026) will bring together a diverse group of researchers, academicians, and industry experts passionate about advancing intelligent and autonomous systems.
+
+  The conference will explore the latest developments in Neuro-Symbolic AI, Machine Learning, Deep Learning, and Swarm Intelligence, focusing on enhancing cognitive computing, intelligent decision-making, and autonomous system design. Discussions will include explainable AI, hybrid AI systems, and multi-agent models, alongside the integration of AI into real-world applications such as healthcare, finance, smart cities, and industrial automation. A key highlight of ICAANS 2026 will be innovations in intelligent systems and applications, including autonomous robotics, IoT-enabled AI, and human–AI interaction. The conference will also cover emerging AI technologies, such as quantum AI, edge computing, AI-enabled cybersecurity, and responsible AI practices.
+
+  Additionally, the conference will emphasize interdisciplinary applications of AI across sustainable development, environmental studies, biomedical engineering, social sciences, and business management, fostering the translation of AI research into societal and industrial impact. ICAANS 2026 aims to foster collaborations, spark innovative ideas, and share knowledge to address global challenges and promote a smarter, more autonomous, and ethically responsible future.
+
+
+email: contact@icaans.com
+
+iteration: 1st
+full_title: 1st International Conference on Advancing Agentic AI Paradigm through Neuro-Symbolic AI and Swarm Intelligence
+short_title: 1st ICAANS 2026
+
+year: 2026
+date: July 16-17, 2026
+
+location: Organized by Department of Computer Science, 
+  Mother Teresa Women’s University (MTWU) collaboration with 
+
+country: Society for Innovation, Research, and Intelligent Computing Systems (SIRICS)
+
+logo_path: ./assets/images/logo_name.png
+
+# if show_logo is false, show_title: false has no effect
+show_logo: true
+show_title: false
+
+slideshow:
+  - id: 0
+    image_path: ./assets/images/slideshow/0-auroville-beach.jpg
+    description: MTWU, Kodaikanal
+    photographer_name: ""
+    photographer_link: ""
+    active: True
+  - id: 1
+    image_path: ./assets/images/slideshow/1-matrimandir.jpeg
+    description: MTWU, Kodaikanal
+    photographer_name: ""
+    photographer_link: ""
+  - id: 2
+    image_path: ./assets/images/slideshow/2-promenade-beach.webp
+    description: MTWU, Kodaikanal
+    photographer_name: ""
+    photographer_link: ""
+  - id: 3
+    image_path: ./assets/images/slideshow/3-whitetown.jpg
+    description: MTWU, Kodaikanal
+    photographer_name: ""
+    photographer_link: ""
+navbar:
+  - id: 0
+    label: Home
+    path: /
+    visible: True
+  - id: 1
+    label: Call for Papers
+    path: /cfp.html
+    visible: True
+  - id: 2
+    label: Committee
+    path: /organization.html
+    visible: True
+  - id: 3
+    label: Speakers
+    path: /keynote.html
+    visible: True
+  - id: 4
+    label: Submission
+    path: /submission.html
+    visible: True
+    children:
+      - label: Submission
+        path: /submission.html
+        visible: True
+      - label: Review Process
+        path: /review_process.html
+        visible: True
+      - label: Ethics and Malpractice Statement
+        path: /ethics.html
+        visible: True
+  - id: 5
+    label: Program
+    path: /program.html
+    visible: True
+  - id: 6
+    label: Registration
+    path: /registration.html
+    visible: True
+deadline_timezone: IST
+deadlines:
+  - date: 2026-05-10
+    text: Paper Submission Deadline
+    pass_due: False
+    strike_through: False
+  - date: 2026-05-20
+    text: Author Notification
+    pass_due: False
+    strike_through: False
+  - date: 2026-06-20
+    # timezone: IST
+    text: Camera Ready Submission
+    pass_due: False
+    strike_through: False

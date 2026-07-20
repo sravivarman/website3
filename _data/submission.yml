@@ -1,0 +1,32 @@
+portal: Microsoft CMT
+url: "https://cmt3.research.microsoft.com/ICAANS2026"
+
+file_formats:
+  - doc
+languages:
+  - English
+
+review_mode: 0
+# 0: double blind
+# 1: single blind
+
+pagelimits:
+  - type: paper
+    name: Paper
+    min: 8
+    max: 9
+
+template:
+  name: Springer Template (MS Word)
+  description: Springer Format
+  url: ./assets/files/icaans-template.zip
+
+max_authors: 4
+min_references: 15
+max_plagiarism: 10
+abstract_words: 150-200
+keywords: 4-5
+
+publisher: Springer
+
+

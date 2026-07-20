@@ -1,0 +1,27 @@
+<div class="row sponsor">
+    <div class="col">
+        <h5>Sponsors</h5>
+        {% if site.data.conference.sponsors == nil %}
+        <div class="alert alert-warning rounded text-center mx-3 my-5">
+            TBA
+        </div>
+        {% else %}
+        <div class="row mx-1 my-1">
+            {% for sponsor in site.data.conference.sponsors %}
+                <div class="card mx-1">
+                    <div class="card-body text-center">
+                        <a href="{{sponsor.url}}" target="_blank" rel="noopener noreferrer">
+                            <img class="img-fluid d-inline-block my-1" src="{{ site.baseurl }}{{ sponsor.logo_path }}" alt="{{ sponsor.name }}" {% if sponsor.style %}style="{{sponsor.style}}"{% endif %}>
+                        </a>
+                        <br>
+                        <a href="{{sponsor.url}}" target="_blank" rel="noopener noreferrer">
+                            <small>{{sponsor.name}}</small>
+                        </a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+    </div>
+</div>
+

@@ -1,0 +1,51 @@
+about: "Register for the 1st ICAANS 2026. Early registration is recommended to secure your participation."
+url: ""
+description: |
+  All authors of accepted papers must register for the conference. At least one author per paper is required to register and present the paper at the conference.
+
+apc:
+  enabled: true
+  title: "Registration Fees"
+  description: |
+    The following registration fees apply for accepted papers.  
+  categories:
+    - type: "Research Scholars/Students"
+      indian: "₹12,500"
+      foreign: "$145"
+    - type: "Faculty"
+      indian: "₹12,500"
+      foreign: "$145"
+    - type: "Industry Persons"
+      indian: "₹15,000"
+      foreign: "$175"
+  notes:
+    - "At least one author per accepted paper must register."
+    - Payment of fees must accompany all registration forms. 
+    - Your registration WILL NOT be confirmed until payment is received in full.
+
+payment:
+  enabled: true
+  title: "Payment Information"
+  description: |
+    Authors are requested to pay the Registration Fees using Bank Transfer or UPI (Google Pay, PhonePe, etc.).
+    Please ensure that your payment is completed before the registration deadline.
+  methods:
+    - name: "Bank Transfer"
+      icon: "fa-university"
+      details: |
+        Bank Name: [To be announced]
+        Account Name: [To be announced]
+        Account Number: [To be announced]
+        IFSC Code: [To be announced]
+    - name: "UPI"
+      icon: "fa-mobile"
+      qr_code: "/assets/images/registration_qr.jpeg"
+      details: |
+        UPI ID: [To be announced]
+        Accepted Apps: Google Pay, PhonePe, Paytm, BHIM, and other UPI apps
+        Reference: Please include your name and paper ID in remarks
+        
+        Scan the QR code for quick UPI payment:
+  notes:
+    - "Please retain your payment confirmation/screenshot for reference."
+    - "For any payment-related queries, please contact the conference committee."

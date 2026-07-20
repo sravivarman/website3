@@ -1,0 +1,177 @@
+<header class="site-header site-hero">
+    <div class="row">
+
+        <!--conference info-->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+            <div class="jumbotron conference-hero-panel">
+                {% if site.data.conference.show_logo %}
+                    {% if site.data.conference.show_title %}
+                    <div class="row">
+                        <div class="col-3 col-md-4 ml-0 my-3">
+                            <img class="img-fluid mt-0 mb-3 border-right border-dark pr-3" src="{{ site.data.conference.logo_path }}">
+                        </div>
+                        <div class="col-8 col-md-7 mx-0">
+                            <h5 class="my-4">{{ site.data.conference.full_title }}</h5>
+                        </div>
+                    </div>
+                    {% else %}
+                    <div class="row">
+                        <div class="col pt-4 pb-2 mx-2 mx-md-3 mx-lg-4 text-center">
+                            <p class="hero-kicker mb-2">International Engineering Conference</p>
+                            <h5 class="text-center">
+                                <img class="img-fluid" src="{{ site.data.conference.logo_path }}" alt="{{site.data.conference.full_title}}">
+                            </h5>
+                            <p class="hero-domain mb-0">Electrical and Electronics Engineering</p>
+                        </div>
+                    </div>
+                    {% endif %}
+                {% else %}
+                {# if logo is not shown, title must be shown #}
+                <div class="row">
+                    <div class="col pt-4">
+                        <h5 class="text-center m-4">{{ site.data.conference.full_title }}</h5>
+                    </div>
+                </div>
+                {% endif %}
+                <div class="row">
+                    <div class="col">
+                        <h6 class="text-center mt-2 mb-1 conference-mode">Hybrid Mode</h6>
+                        <h6 class="text-center mt-0 mb-1 conference-date">{{ site.data.conference.date }}</h6>
+                        <p class="text-center mt-2 mb-0 conference-location">
+                            {{ site.data.conference.location }},<br>
+                            {{ site.data.conference.country }}
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--slide show-->
+        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6">
+
+            <div id="conference-carousel" class="carousel slide conference-carousel" data-ride="carousel">
+
+                <div class="carousel-inner" role="listbox">
+                    {% for slide in site.data.conference.slideshow %}
+                    {% if page.slide_id and page.slide_id  == slide.id %}
+                    {% assign active = "active" %}
+                    {% else %}
+                    {% assign active = "" %}
+                    {% endif %}
+                    <div class="carousel-item {{active}}">
+                        <img class="img-fluid" src="{{ slide.image_path }}" alt="{{ slide.description }}">
+                        <div class="carousel-caption">
+                            <p class="align-bottom text-white">
+                                <span class="px-3 py-1 rounded">
+                                {{slide.description}}
+                                {% if slide.photographer.name %}
+                                by <a href="{{slide.photographer_link}}">{{slide.photographer_name}}</a>
+                                {% endif %}
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <!--navbar-->
+        <div class="mynav col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12">
+            <nav class="nav navbar-dark navbar-expand-lg conference-nav">
+                {% if site.data.conference.previous_iterations %}
+                <a class="navbar-brand ml-4 dropdown-toggle" href="#"
+                    title="Previous Iterations of {{site.data.conference.short_name}}" role="button"
+                    data-toggle="dropdown" aria-expanded="false">
+                    {{site.data.conference.short_name}}
+                </a>
+                <div class="dropdown-menu">
+                    <span class="dropdown-item"></span>
+                    {% for previous in site.data.conference.previous_iterations %}
+                    <a class="dropdown-item text-secondary" href="{{previous.url}}" target="_blank" rel="noopener">
+                        {{previous.name}}, {{previous.year}}
+                    </a>
+                    {% endfor %}
+                </div>
+                {% else %}
+                <a class="navbar-brand ml-4" href="#">{{site.data.conference.short_name}}</a>
+                {% endif %}
+
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar-with-toggle"
+                    aria-controls="navbar-with-toggle" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar-with-toggle">
+                    <ul class="navbar-nav ml-3 my-2 my-lg-0 navbar-nav-scroll" style="max-height: 200px;">
+                        {% for nav in site.data.conference.navbar %}
+                        {% if nav.visible %}
+                        {% if nav.children %}
+                            <li class="nav-item dropdown">
+                                <a href="#" class="nav-link m-1 dropdown-toggle" role="button" data-toggle="dropdown">
+                                    <strong>{{nav.label}}</strong>
+                                </a>
+                                <div class="dropdown-menu">
+                                    {% for child in nav.children %}
+                                    {% if child.visible %}
+                                        {% if page.url == child.path %}
+                                        <a class="dropdown-item text-white bg-secondary" href=".{{ child.path }}">
+                                            {{ child.label | escape }}
+                                        </a>
+                                        {% else %}
+                                        <a class="dropdown-item text-secondary" href=".{{ child.path }}">
+                                            {{ child.label | escape }}
+                                        </a>
+                                        {% endif %}
+                                    {% endif %}
+                                    {% endfor %}
+                                </div>
+                            </li>
+                        {% else %}
+                            {% if page.url == nav.path %}
+                            <li class="nav-item active">
+                                <a class="nav-link m-1" href=".{{ nav.path }}">
+                                    <strong>{{ nav.label | escape }}</strong>
+                                </a>
+                            </li>
+                            {% else %}
+                            <li class="nav-item">
+                                <a class="nav-link m-1" href=".{{ nav.path }}">
+                                    <strong>{{ nav.label | escape }}</strong>
+                                </a>
+                            </li>
+                            {% endif %}
+                        {% endif %}
+                        {% endif %}
+                        {% endfor %}
+                    </ul>
+
+                    <ul class="navbar-nav ml-auto">
+                        {% if site.data.conference.social_media.facebook_link != nil %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ site.data.conference.social_media.facebook_link }}">
+                                <span class="fa-stack">
+                                    <i class="fa fa-facebook-square fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        {% endif %}
+                        {% if site.data.conference.social_media.twitter_link != nil %}
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ site.data.conference.social_media.twitter_link }}">
+                                <span class="fa-stack">
+                                    <i class="fa fa-twitter-square fa-stack-1x"></i>
+                                </span>
+                            </a>
+                        </li>
+                        {% endif %}
+                    </ul>
+
+                </div>
+            </nav>
+        </div>
+    </div>
+</header>

@@ -496,6 +496,7 @@ def build(output_dir: str = "dist") -> None:
         loader=FileSystemLoader(str(TEMPLATES_DIR)),
         autoescape=select_autoescape(["html"]),
     )
+    env.filters["slugify"] = slugify
 
     base_context = {
         "site_title": site_title,
@@ -517,10 +518,10 @@ def build(output_dir: str = "dist") -> None:
         show_hero=True,
     )
     page_routes = [
-        ("about", "about/index.html"),
-        ("program", "program/index.html"),
+        ("call_for_papers", "call-for-papers/index.html"),
+        ("committee", "committee/index.html"),
         ("speakers", "speakers/index.html"),
-        ("venue", "venue/index.html"),
+        ("submission", "submission/index.html"),
         ("registration", "registration/index.html"),
         ("contact", "contact/index.html"),
     ]

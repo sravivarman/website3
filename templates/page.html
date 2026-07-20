@@ -20,7 +20,7 @@
 </section>
 
 {% for section in page.sections %}
-<section class="section">
+<section class="section" id="{{ section.title | slugify }}">
   <h2>{{ section.title }}</h2>
 
   {% if section.body %}

@@ -1240,7 +1240,6 @@ body.conference-site .site-nav {
   background: rgba(248, 247, 242, 0.9);
   border: 1px solid rgba(13, 26, 43, 0.12);
   box-shadow: 0 12px 30px rgba(13, 26, 43, 0.08);
-  backdrop-filter: blur(12px);
   gap: 0.85rem;
   flex-wrap: wrap;
 }
@@ -1265,6 +1264,59 @@ body.conference-site .site-nav a {
   border-radius: 999px;
   color: #0d1a2b;
   transition: background-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+body.conference-site .site-nav summary {
+  list-style: none;
+  padding: 0.45rem 0.78rem;
+  border-radius: 999px;
+  color: #0d1a2b;
+  cursor: pointer;
+  transition: background-color 0.16s ease, color 0.16s ease, transform 0.16s ease;
+}
+
+body.conference-site .site-nav summary::-webkit-details-marker {
+  display: none;
+}
+
+body.conference-site .site-nav summary:hover,
+body.conference-site .site-nav a:hover {
+  background: rgba(0, 107, 132, 0.1);
+  color: #043344;
+  text-decoration: none;
+  transform: translateY(-1px);
+}
+
+body.conference-site .nav-dropdown {
+  position: relative;
+}
+
+body.conference-site .nav-dropdown-menu {
+  position: absolute;
+  top: calc(100% + 0.6rem);
+  left: 0;
+  min-width: 16rem;
+  display: none;
+  flex-direction: column;
+  gap: 0.35rem;
+  padding: 0.55rem;
+  border: 1px solid rgba(13, 26, 43, 0.12);
+  border-radius: 1rem;
+  background: rgba(248, 247, 242, 0.98);
+  box-shadow: 0 18px 36px rgba(13, 26, 43, 0.12);
+  z-index: 20;
+}
+
+body.conference-site .nav-dropdown[open] .nav-dropdown-menu,
+body.conference-site .nav-dropdown:focus-within .nav-dropdown-menu {
+  display: flex;
+}
+
+body.conference-site .nav-dropdown-menu a {
+  border-radius: 0.75rem;
+  padding: 0.55rem 0.7rem;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 body.conference-site .site-nav a:hover {
@@ -1524,6 +1576,23 @@ body.conference-site .site-footer a {
   body.conference-site .site-nav-links {
     border-top-color: rgba(13, 26, 43, 0.14);
   }
+
+  body.conference-site .nav-dropdown {
+    width: 100%;
+  }
+
+  body.conference-site .nav-dropdown-menu {
+    position: static;
+    display: none;
+    min-width: 0;
+    margin-top: 0.4rem;
+    box-shadow: none;
+  }
+
+  body.conference-site .nav-dropdown[open] .nav-dropdown-menu,
+  body.conference-site .nav-dropdown:focus-within .nav-dropdown-menu {
+    display: flex;
+  }
 }
 
 @media (max-width: 520px) {
@@ -1536,6 +1605,10 @@ body.conference-site .site-footer a {
   }
 
   body.conference-site .site-nav a {
+    padding: 0.38rem 0.68rem;
+  }
+
+  body.conference-site .site-nav summary {
     padding: 0.38rem 0.68rem;
   }
 

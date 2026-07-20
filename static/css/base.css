@@ -1604,6 +1604,11 @@ body.conference-site .timeline-date {
   color: #0a5f74;
 }
 
+body.conference-site #organizing-committee .info-grid,
+body.conference-site #program-and-review-committee .info-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
 body.conference-site .article-content ul,
 body.conference-site .article-content ol {
   margin-left: 1.15rem;
@@ -1638,6 +1643,11 @@ body.conference-site .site-footer a {
 @media (max-width: 820px) {
   body.conference-site .conference-hero-copy {
     padding: 1.5rem;
+  }
+
+  body.conference-site #organizing-committee .info-grid,
+  body.conference-site #program-and-review-committee .info-grid {
+    grid-template-columns: 1fr;
   }
 
   body.conference-site .site-nav {

@@ -3,7 +3,24 @@ layout: page
 ---
 
 <div class="row">
-    <div class="col-xs-12 col-sm-12 col-md-8 col-lg-8 col-xl-8 my-2 text-justify conference-text">
+    <div class="col-12 mb-2">
+        <section class="home-highlights-grid">
+            <article class="highlight-tile">
+                <p class="highlight-label mb-1">Primary Domains</p>
+                <p class="highlight-value mb-0">Electrical Engineering, Electronics, Embedded Intelligence</p>
+            </article>
+            <article class="highlight-tile">
+                <p class="highlight-label mb-1">Format</p>
+                <p class="highlight-value mb-0">Hybrid Keynotes, Technical Sessions, Industry Dialogues</p>
+            </article>
+            <article class="highlight-tile">
+                <p class="highlight-label mb-1">Focus</p>
+                <p class="highlight-value mb-0">Sustainable Power Systems, Smart Circuits, Intelligent Automation</p>
+            </article>
+        </section>
+    </div>
+
+    <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 col-xl-7 my-2 text-justify conference-text">
 
         <section class="home-intro-panel">
             <p class="section-tag mb-2">Conference Overview</p>
@@ -19,7 +36,12 @@ layout: page
         </section>
 
     </div>
-    <div class="col-xs-12 col-sm-12 col-md-4 col-lg-4 col-xl-4 home-sidebar-column">
+    <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5 col-xl-5 home-sidebar-column">
+        <section class="home-sidebar-stack">
+            <div class="home-sidebar-intro">
+                <p class="section-tag mb-2">Engineering Tracks</p>
+                <p class="mb-0">Power Electronics, Renewable Energy Systems, VLSI, IoT Hardware, Control Systems, and Applied AI for Electrical Infrastructure.</p>
+            </div>
         <!-- news -->
         {% include card-news.html %}
         <!-- ---- -->
@@ -32,6 +54,7 @@ layout: page
         <!-- contact -->
         {% include contact-us.html %}
         <!-- ------- -->
+        </section>
     </div>
 </div>
 

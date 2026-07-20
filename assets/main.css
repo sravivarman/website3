@@ -61,6 +61,31 @@ a:focus {
     padding-right: 0;
 }
 
+.site-shell {
+    position: relative;
+    padding-bottom: 1.2rem;
+}
+
+.site-shell-inner {
+    position: relative;
+}
+
+.site-main-frame {
+    position: relative;
+    border-radius: var(--radius-xl);
+    padding: 0.35rem 0.2rem 0.7rem;
+}
+
+.site-main-frame::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: var(--radius-xl);
+    border: 1px solid rgba(133, 166, 197, 0.32);
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.45), rgba(246, 251, 255, 0.25));
+    pointer-events: none;
+}
+
 .px-3 {
     padding-left: 1rem !important;
     padding-right: 1rem !important;
@@ -257,6 +282,70 @@ a:focus {
     padding-bottom: 12px;
 }
 
+.page-masthead {
+    position: relative;
+    border-radius: var(--radius-xl);
+    padding: 1rem 1.1rem;
+    background:
+        linear-gradient(130deg, rgba(10, 38, 62, 0.95) 0%, rgba(11, 56, 88, 0.93) 50%, rgba(18, 74, 101, 0.92) 100%);
+    border: 1px solid rgba(135, 171, 206, 0.45);
+    box-shadow: var(--shadow-md);
+    color: #eaf7ff;
+    overflow: hidden;
+}
+
+.page-masthead::after {
+    content: "";
+    position: absolute;
+    right: -20px;
+    top: -28px;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    border: 2px solid rgba(98, 230, 206, 0.32);
+}
+
+.page-masthead-kicker {
+    font-size: 0.74rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #7fe5ff;
+}
+
+.page-masthead-title {
+    font-size: 1.7rem;
+    line-height: 1.2;
+    color: #ffffff;
+}
+
+.page-masthead-subtitle {
+    font-size: 0.93rem;
+    color: #c9ecfb;
+}
+
+.page-masthead-meta {
+    border: 1px solid rgba(154, 198, 228, 0.4);
+    border-radius: 12px;
+    padding: 0.75rem 0.85rem;
+    background: rgba(3, 23, 41, 0.32);
+    font-size: 0.9rem;
+    color: #d8f0ff;
+}
+
+.page-stage {
+    border-radius: var(--radius-xl);
+    border: 1px solid #d0e2f2;
+    background: linear-gradient(180deg, rgba(248, 252, 255, 0.9) 0%, rgba(239, 247, 253, 0.92) 100%);
+    box-shadow: var(--shadow-md);
+    padding: 0.45rem;
+}
+
+.page-stage-inner {
+    border-radius: 14px;
+    padding: 0.3rem;
+}
+
 .home-intro-panel,
 .home-content-panel {
     border: 1px solid var(--line);
@@ -265,6 +354,36 @@ a:focus {
     box-shadow: var(--shadow-md);
     margin-bottom: 1rem;
     padding: 1rem 1.15rem;
+}
+
+.home-highlights-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.65rem;
+}
+
+.highlight-tile {
+    border: 1px solid #cbe2f4;
+    border-radius: 12px;
+    padding: 0.8rem 0.85rem;
+    background: linear-gradient(180deg, #f8fcff 0%, #edf6fd 100%);
+    box-shadow: var(--shadow-md);
+}
+
+.highlight-label {
+    margin: 0;
+    font-size: 0.75rem;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: #0b78b2;
+    font-weight: 700;
+}
+
+.highlight-value {
+    margin: 0;
+    font-size: 0.91rem;
+    line-height: 1.45;
+    color: #18344d;
 }
 
 .home-content-panel {
@@ -290,6 +409,21 @@ a:focus {
 
 .home-sidebar-column {
     animation: panel-reveal 0.8s ease 0.25s both;
+}
+
+.home-sidebar-stack {
+    display: grid;
+    gap: 0.65rem;
+}
+
+.home-sidebar-intro {
+    border: 1px solid #cfe3f4;
+    border-radius: 12px;
+    background: linear-gradient(180deg, #f9fcff 0%, #edf5fc 100%);
+    padding: 0.85rem 0.9rem;
+    box-shadow: var(--shadow-md);
+    font-size: 0.9rem;
+    color: #2a4660;
 }
 
 .card {
@@ -409,6 +543,10 @@ a:focus {
     .conference-nav {
         border-radius: 10px;
     }
+
+    .home-highlights-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 @media (max-width: 767.98px) {
@@ -429,10 +567,40 @@ a:focus {
         margin-left: 0 !important;
     }
 
+    .site-main-frame {
+        padding: 0.15rem 0 0.5rem;
+    }
+
+    .page-masthead {
+        padding: 0.8rem;
+    }
+
+    .page-masthead-title {
+        font-size: 1.3rem;
+    }
+
+    .page-masthead-meta {
+        font-size: 0.85rem;
+        padding: 0.6rem 0.7rem;
+    }
+
+    .page-stage {
+        padding: 0.25rem;
+    }
+
+    .page-stage-inner {
+        padding: 0.1rem;
+    }
+
     .home-intro-panel,
     .home-content-panel {
         padding: 0.85rem 0.9rem;
         border-radius: 14px;
+    }
+
+    .home-highlights-grid {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
     }
 
     .conference-footer {

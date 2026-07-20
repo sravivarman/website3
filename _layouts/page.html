@@ -2,8 +2,26 @@
 layout: default
 ---
 
-<div class="row mt-xs-0 mt-sm-0 mt-md-1 mt-lg-2 mt-xl-2 mb-xs-2 mb-sm-2">
-    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 col-xl-12 offset-xl-0 {{page.classes}}">
+{% unless page.layout == 'home' %}
+<section class="page-masthead mt-2 mb-3">
+    <div class="row align-items-center">
+        <div class="col-12 col-lg-8">
+            <p class="page-masthead-kicker mb-1">{{ site.data.conference.short_title }}</p>
+            <h1 class="page-masthead-title mb-1">{{ page.title | default: site.data.conference.short_name }}</h1>
+            <p class="page-masthead-subtitle mb-0">Electrical and Electronics Engineering Tracks and Sessions</p>
+        </div>
+        <div class="col-12 col-lg-4 mt-3 mt-lg-0">
+            <div class="page-masthead-meta">
+                <p class="mb-1"><strong>{{ site.data.conference.date }}</strong></p>
+                <p class="mb-0">{{ site.data.conference.location }} {{ site.data.conference.country }}</p>
+            </div>
+        </div>
+    </div>
+</section>
+{% endunless %}
+
+<section class="page-stage mt-xs-0 mt-sm-0 mt-md-1 mt-lg-2 mt-xl-2 mb-xs-2 mb-sm-2 {{page.classes}}">
+    <div class="page-stage-inner">
         {{ content }}
     </div>
-</div>
+</section>

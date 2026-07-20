@@ -187,7 +187,7 @@ pages:
             body: |
               The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
   review_process:
-    kicker: "Submission"
+    kicker: "Review process"
     title: "Review process"
     summary: |
       The conference uses a double-blind peer-review process with screening, evaluation, revision, and final decision stages.
@@ -240,7 +240,7 @@ pages:
             body: |
               All submitted manuscripts are treated as confidential documents. Reviewers must not share, discuss, or use unpublished material, and review materials are not disclosed outside the review process. A conflict of interest exists when the reviewer and author are from the same institution, have recent collaboration, or have a personal, financial, or professional conflict. Reviewers must declare conflicts and recuse themselves.
   ethics_and_malpractice_statement:
-    kicker: "Submission"
+    kicker: "Ethics and Malpractice Statement"
     title: "Ethics and Malpractice Statement"
     summary: |
       Publication ethics policy, reviewer responsibilities, and misconduct handling for ICAANS 2026.

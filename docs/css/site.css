@@ -1233,7 +1233,6 @@ body.conference-site a:hover {
 body.conference-site .site-header {
   background: rgba(248, 247, 242, 0.84);
   border-bottom: 1px solid rgba(13, 26, 43, 0.12);
-  backdrop-filter: blur(14px);
 }
 
 body.conference-site .site-main {

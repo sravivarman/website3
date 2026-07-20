@@ -1,0 +1,336 @@
+site_name: "International Conference on Electric Vehicles and Smart Grid"
+abbrev: "ICEVSG 2026"
+hero_title: "International Conference on Electric Vehicles and Smart Grid"
+hero_tagline: "Accelerating electrified mobility with resilient, intelligent power systems."
+hero_summary: |
+  The International Conference on Electric Vehicles and Smart Grid brings together researchers, utilities, automakers, policymakers, and city leaders to align vehicle electrification with power-system resilience.
+
+  Across three days of keynotes, technical sessions, tutorials, and networking, the conference will focus on smart charging, storage, grid flexibility, data-driven operations, and equitable infrastructure planning.
+dates: "14-16 October 2026"
+location: "Detroit, Michigan, USA"
+host: "Hosted by the Center for Sustainable Mobility and Global Energy Systems Alliance"
+primary_cta:
+  label: "Register Now"
+  url: "registration/"
+secondary_cta:
+  label: "View Program"
+  url: "program/"
+stats:
+  - value: "48"
+    label: "Sessions, workshops, and panels"
+  - value: "12"
+    label: "Keynote and invited speakers"
+  - value: "6"
+    label: "Technical tracks"
+  - value: "3"
+    label: "Days of programming"
+tracks:
+  - title: "Vehicle-to-grid integration"
+    body: "Managed charging, bidirectional power flow, and control strategies that turn EV fleets into grid assets."
+  - title: "Smart charging and interoperability"
+    body: "Standards, protocols, and utility coordination that make public and private charging reliable at scale."
+  - title: "Storage and distribution planning"
+    body: "Battery storage, feeder constraints, and distribution modeling for rapid load growth."
+  - title: "Power electronics and grid resilience"
+    body: "Converters, protection, harmonics, and resilience engineering for electrified infrastructure."
+  - title: "Data, AI, and digital twins"
+    body: "Forecasting, optimization, anomaly detection, and operational analytics for transport-energy systems."
+  - title: "Policy, markets, and equity"
+    body: "Tariffs, incentives, congestion, access, and planning decisions that determine who benefits from electrification."
+important_dates:
+  - label: "Abstract submission opens"
+    date: "1 February 2026"
+    note: "Short abstracts and session proposals accepted online."
+  - label: "Full paper deadline"
+    date: "1 April 2026"
+    note: "Full papers move into peer review for the proceedings."
+  - label: "Author notification"
+    date: "15 June 2026"
+    note: "Decisions and revision guidance released to authors."
+  - label: "Early registration closes"
+    date: "1 August 2026"
+    note: "Discounted rates available until this date."
+  - label: "Conference dates"
+    date: "14-16 October 2026"
+    note: "Three days of talks, workshops, and networking."
+program_preview:
+  - day: "Day 1"
+    title: "Systems, standards, and policy"
+    body: "Opening keynote, standards roundtable, and technical sessions on grid interconnection and interoperability."
+  - day: "Day 2"
+    title: "Algorithms, charging, and markets"
+    body: "Sessions on optimization, pricing, load forecasting, and managed charging at fleet scale."
+  - day: "Day 3"
+    title: "Deployment, resilience, and equity"
+    body: "Workshops on resilience planning, community deployment, workforce readiness, and closing remarks."
+featured_speakers:
+  - name: "Dr. Maya Rodriguez"
+    role: "Opening Keynote"
+    affiliation: "National Renewable Energy Laboratory"
+    talk_title: "When EVs Become Grid Assets"
+    bio: |
+      Dr. Rodriguez studies managed charging, distribution constraints, and the systems-level effects of large-scale EV adoption.
+  - name: "Prof. Daniel Okafor"
+    role: "Invited Speaker"
+    affiliation: "University of Michigan"
+    talk_title: "Distribution Planning for Fast EV Growth"
+    bio: |
+      Prof. Okafor works on feeder modeling, resilience planning, and electrification strategies for urban and suburban networks.
+  - name: "Elena Park"
+    role: "Invited Speaker"
+    affiliation: "Midwest Clean Transportation Coalition"
+    talk_title: "Equity in Charging Access"
+    bio: |
+      Elena Park focuses on deployment policy, access, and community-centered infrastructure programs.
+  - name: "Dr. Ahmed Saleh"
+    role: "Tutorial Lead"
+    affiliation: "Argonne National Laboratory"
+    talk_title: "Digital Twins for Smart Charging"
+    bio: |
+      Dr. Saleh develops digital twin methods for forecasting, charging orchestration, and operational decision support.
+  - name: "Priya Nair"
+    role: "Industry Panelist"
+    affiliation: "GridPulse Energy"
+    talk_title: "Fleet Charging at Commercial Scale"
+    bio: |
+      Priya Nair leads deployment work for depot charging, energy management, and utility coordination with fleet operators.
+sponsors:
+  - name: "National Renewable Energy Laboratory"
+    level: "Platinum"
+  - name: "Wayne State University"
+    level: "Platinum"
+  - name: "Midwest Clean Transportation Coalition"
+    level: "Gold"
+  - name: "GridPulse Energy"
+    level: "Gold"
+  - name: "Detroit Mobility Alliance"
+    level: "Silver"
+  - name: "IEEE Power and Energy Society"
+    level: "Silver"
+contact:
+  email: "icevsg2026@example.org"
+  sponsorship_email: "partners@icevsg2026.example.org"
+  press_email: "media@icevsg2026.example.org"
+  address: "Wayne State University, Detroit, Michigan, USA"
+pages:
+  about:
+    kicker: "About"
+    title: "A conference built for the electrified energy transition"
+    summary: |
+      ICEVSG 2026 is designed as a working conference for people who need to make vehicle electrification and smart-grid modernization succeed together.
+
+      The goal is not just to present research, but to connect system planners, researchers, and implementers around practical paths forward.
+    sections:
+      - title: "Conference goals"
+        body: |
+          ICEVSG 2026 is organized around the question of how transport electrification can scale without overwhelming local infrastructure.
+
+          Sessions will emphasize technical rigor, deployment lessons, and actionable insights for utilities, cities, labs, and industry teams.
+      - title: "What the conference covers"
+        cards:
+          - title: "Grid impact"
+            meta: "Topic 1"
+            body: "Load growth, distribution constraints, resilience, interconnection, and operational planning."
+          - title: "Charging infrastructure"
+            meta: "Topic 2"
+            body: "Public charging, depot charging, interoperability, reliability, and maintenance."
+          - title: "System intelligence"
+            meta: "Topic 3"
+            body: "Optimization, forecasting, digital twins, and control strategies for active energy management."
+      - title: "Who should attend"
+        bullets:
+          - "Researchers working on electric vehicles, power systems, control, or energy policy."
+          - "Utility planners, regulators, and grid operators preparing for rapid EV adoption."
+          - "Automakers, charging-network operators, and fleet managers building infrastructure at scale."
+          - "Public-sector leaders focused on climate, transportation, and equitable access."
+      - title: "Organizing structure"
+        cards:
+          - title: "Technical program committee"
+            meta: "Peer review"
+            body: "Responsible for paper review, session balancing, and workshop selection."
+          - title: "Local organizing committee"
+            meta: "Venue and logistics"
+            body: "Handles registration, travel guidance, accessibility, and onsite coordination."
+          - title: "Industry advisory board"
+            meta: "Deployment feedback"
+            body: "Ensures the program reflects practical deployment needs and current industry constraints."
+  program:
+    kicker: "Program"
+    title: "Three days of technical sessions, workshops, and networking"
+    summary: |
+      The program blends plenaries with focused technical tracks so attendees can move between systems-level conversations and implementation detail.
+    sections:
+      - title: "Day 1: Systems, standards, and policy"
+        sessions:
+          - time: "08:30"
+            title: "Registration and welcome coffee"
+            speaker: "Main Lobby"
+            room: "Fisher Center"
+            description: "Pick up badges, meet other attendees, and settle in before the opening session."
+          - time: "09:30"
+            title: "Opening keynote"
+            speaker: "Dr. Maya Rodriguez"
+            room: "Grand Hall"
+            description: "A systems view of vehicle electrification as a grid resource."
+          - time: "11:00"
+            title: "Standards roundtable"
+            speaker: "Utilities, OEMs, and charger vendors"
+            room: "Grand Hall"
+            description: "Interoperability, communication standards, and deployment coordination."
+          - time: "14:00"
+            title: "Technical track sessions"
+            speaker: "Multiple presenters"
+            room: "Breakout rooms"
+            description: "Concurrent sessions on interconnection, policy, and planning."
+      - title: "Day 2: Algorithms, charging, and markets"
+        sessions:
+          - time: "09:00"
+            title: "Tutorial: smart charging optimization"
+            speaker: "Dr. Ahmed Saleh"
+            room: "Lab A"
+            description: "Methods for managing charging demand across fleets, depots, and neighborhoods."
+          - time: "11:00"
+            title: "Panel: fleet charging at scale"
+            speaker: "Fleet managers, utilities, and vendors"
+            room: "Grand Hall"
+            description: "Operational lessons from commercial deployments and logistics electrification."
+          - time: "13:30"
+            title: "Poster and demo session"
+            speaker: "Student and industry presentations"
+            room: "Exhibit hall"
+            description: "Posters, tools, prototypes, and early-stage research across the conference tracks."
+          - time: "15:30"
+            title: "Market design session"
+            speaker: "Policy and economics speakers"
+            room: "Breakout rooms"
+            description: "Tariffs, demand response, managed charging incentives, and market structures."
+      - title: "Day 3: Deployment, resilience, and equity"
+        sessions:
+          - time: "09:00"
+            title: "Community deployment workshop"
+            speaker: "Local planners and nonprofit partners"
+            room: "Workshop room"
+            description: "How charging infrastructure can be delivered equitably and maintained over time."
+          - time: "10:30"
+            title: "Grid resilience and outage planning"
+            speaker: "Distribution engineers"
+            room: "Grand Hall"
+            description: "Planning for storms, peak loads, and resilient electrified corridors."
+          - time: "13:00"
+            title: "Invited talks and closing panel"
+            speaker: "Featured speakers"
+            room: "Grand Hall"
+            description: "Where the field is heading next, and what needs to happen before the next conference."
+  speakers:
+    kicker: "Speakers"
+    title: "Researchers and practitioners leading the conversation"
+    summary: |
+      The speaker lineup mixes national laboratory researchers, university experts, industry practitioners, and policy leaders so attendees can hear how the same challenges look from different parts of the system.
+    sections:
+      - title: "Featured speakers"
+        cards:
+          - title: "Dr. Maya Rodriguez"
+            meta: "Opening keynote"
+            subtitle: "National Renewable Energy Laboratory"
+            body: "<strong>Talk:</strong> When EVs Become Grid Assets. Focused on managed charging, load flexibility, and distribution impacts."
+          - title: "Prof. Daniel Okafor"
+            meta: "Invited speaker"
+            subtitle: "University of Michigan"
+            body: "<strong>Talk:</strong> Distribution Planning for Fast EV Growth. Covers feeder modeling and resilience planning."
+          - title: "Elena Park"
+            meta: "Invited speaker"
+            subtitle: "Midwest Clean Transportation Coalition"
+            body: "<strong>Talk:</strong> Equity in Charging Access. Centers community deployment and public-sector coordination."
+          - title: "Dr. Ahmed Saleh"
+            meta: "Tutorial lead"
+            subtitle: "Argonne National Laboratory"
+            body: "<strong>Talk:</strong> Digital Twins for Smart Charging. Focused on forecasting and operational analytics."
+          - title: "Priya Nair"
+            meta: "Industry panelist"
+            subtitle: "GridPulse Energy"
+            body: "<strong>Talk:</strong> Fleet Charging at Commercial Scale. Looks at depot charging and utility coordination."
+          - title: "Dr. Sofia Bennett"
+            meta: "Closing panel"
+            subtitle: "Detroit Mobility Lab"
+            body: "<strong>Talk:</strong> Resilience, workforce readiness, and deployment at city scale."
+  venue:
+    kicker: "Venue"
+    title: "Hosted in Detroit, with transit access and nearby hotels"
+    summary: |
+      The conference venue was selected for walkability, transit access, and straightforward travel from the airport and regional rail connections.
+    sections:
+      - title: "Conference venue"
+        cards:
+          - title: "Main hall and breakouts"
+            meta: "On site"
+            body: "Keynotes, panels, and technical sessions will take place in the Fisher Center conference spaces."
+          - title: "Accessibility"
+            meta: "On site"
+            body: "Step-free access, accessible restrooms, quiet spaces, and assistive seating will be available."
+          - title: "Technology"
+            meta: "On site"
+            body: "High-speed Wi-Fi, projection, and poster/demo areas are included throughout the venue."
+      - title: "Travel and lodging"
+        bullets:
+          - "Detroit Metro Airport is the primary airport for domestic and international travel."
+          - "Rideshare, hotel shuttles, and regional transit can connect attendees to the venue."
+          - "A block of rooms will be reserved at nearby hotels with conference rates."
+          - "Local parking instructions and transit maps will be shared after registration."
+      - title: "A low-carbon event"
+        bullets:
+          - "Digital program materials will be provided to reduce printed waste."
+          - "Water stations and reusable materials will be prioritized onsite."
+          - "Food service will include plant-forward options and allergen labeling."
+  registration:
+    kicker: "Registration"
+    title: "Register early for the best rate and secure your workshop spot"
+    summary: |
+      Registration includes access to all plenaries, technical sessions, workshops, coffee breaks, and the evening networking reception.
+    sections:
+      - title: "Fee schedule"
+        cards:
+          - title: "Early career and student"
+            meta: "$180 early / $240 standard"
+            body: "Discounted access for students, postdocs, and other early-career attendees."
+          - title: "Academic and nonprofit"
+            meta: "$320 early / $420 standard"
+            body: "Full conference access for university and mission-driven participants."
+          - title: "Industry and utility"
+            meta: "$540 early / $680 standard"
+            body: "Designed for practitioners, vendors, and utility teams attending in person."
+          - title: "Workshop only"
+            meta: "$120"
+            body: "Access to a single workshop day for attendees who cannot attend the full conference."
+      - title: "What registration includes"
+        bullets:
+          - "Admission to all plenaries, paper sessions, and poster/demo sessions."
+          - "Lunch and coffee breaks during the main conference days."
+          - "Access to workshop materials and post-conference slides when approved by speakers."
+          - "Entry to the opening reception and networking events."
+      - title: "How to register"
+        body: |
+          Use the registration portal to select your attendee type, workshop preferences, and receipt information.
+
+          If your institution requires an invoice before payment, contact the organizing committee and include your registration details.
+  contact:
+    kicker: "Contact"
+    title: "Reach the organizers for registration, program, or sponsorship questions"
+    summary: |
+      The organizing team can help with speaker requests, accessibility needs, sponsorship packages, press inquiries, and registration problems.
+    sections:
+      - title: "Organizing committee"
+        cards:
+          - title: "General inquiries"
+            meta: "Program and logistics"
+            body: "Email <a href=\"mailto:icevsg2026@example.org\">icevsg2026@example.org</a> for registration and agenda questions."
+          - title: "Sponsorship"
+            meta: "Partnerships"
+            body: "Email <a href=\"mailto:partners@icevsg2026.example.org\">partners@icevsg2026.example.org</a> to request the sponsor prospectus."
+          - title: "Press and media"
+            meta: "Communications"
+            body: "Email <a href=\"mailto:media@icevsg2026.example.org\">media@icevsg2026.example.org</a> for press access and interviews."
+      - title: "Office details"
+        bullets:
+          - "Address: Wayne State University, Detroit, Michigan, USA"
+          - "Conference email: icevsg2026@example.org"
+          - "Accessibility and accommodation requests are welcome early."

@@ -1,69 +1,15 @@
-# ============================================================
-# portfolio_config.yaml
-# ============================================================
-# This is the main configuration file for your portfolio site.
-# Edit the values below to personalize your site.
-# After editing, run:  uv run python build.py
-# ============================================================
+conference_file: content/conference.yaml
 
-# --- Student profile ---
-# Point this to your profile file inside content/
-student_file: content/arkesh.yaml
-
-# --- Detail pages ---
-scholarship_file: content/scholarship.yaml
-cv_file: content/cv.yaml
-about_file: content/about.yaml
-
-
-# --- Projects to display ---
-# List the YAML files (inside content/projects/) you want shown.
-# Remove example projects and add your own once you're ready.
-projects:
-  - content/projects/MSU_Cirric.yaml
-  - content/projects/admissions.yaml
-  - content/projects/measles.yaml
-  - content/projects/nyc311.yaml
-  - content/projects/curser_project.yaml
-  - content/projects/immune_gwas_fdr.yaml
-
-
-# --- Writing posts to display ---
-# List the YAML files (inside content/blog/) you want shown.
-# These will appear in the Writing section on the main page.
-# Order here controls the order on the website (top to bottom).
-writing_posts:
-  - content/blog/scared.yaml
-  - content/blog/rising-matriculation-age.yaml
-  - content/blog/ggs-no-re.yaml
-  - content/blog/dimensions-are-a-social-construct.yaml
-  - content/blog/karma.yaml
-  - content/blog/finger.yaml
-  - content/blog/how-alive-are-we.yaml
-  - content/blog/ice-cream.yaml
-
-
-# --- Theme ---
 # Built-in options: "clinical", "clinical-dark", "light", "dark", "msu-light", "msu-dark"
-# You can also add your own CSS file under static/css/themes/ and
-# use its name here (without the .css extension).
+# The conference site uses a custom shell on top of the selected theme.
 theme: clinical
 
-# --- Theme toggle ---
-# The light theme should match `theme` above so the no-JavaScript fallback
-# and default JavaScript state look the same.
 theme_toggle:
-  enabled: true
+  enabled: false
   light_theme: clinical
   dark_theme: clinical-dark
   light_label: Light
   dark_label: Dark
 
-
-# --- Site metadata ---
-# Used in the HTML <title> tag and browser tab.
-site_title: "Arkesh Das | Portfolio"
-
-# Optional Google Search Console ownership verification.
-# Paste only the content value from the verification meta tag.
-google_site_verification: "J_GFC5Iq9J6VxDzg_zzMcwZEaZEcNb10MkXVM576P6Q"
+site_title: "ICEVSG 2026 | International Conference on Electric Vehicles and Smart Grid"
+google_site_verification: ""

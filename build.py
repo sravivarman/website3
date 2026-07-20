@@ -404,6 +404,53 @@ def render_page(env: Environment, template_name: str, output_rel: str, **context
     print(f"       rendered: {output_path.relative_to(ROOT)}")
 
 
+def render_markdown_tree(value, fields: set[str] | None = None) -> None:
+    """Render markdown in nested conference content structures."""
+    markdown_fields = fields or {
+        "summary",
+        "body",
+        "bio",
+        "note",
+        "details",
+        "abstract",
+        "intro",
+        "lead",
+        "content",
+    }
+
+    if isinstance(value, dict):
+        for key, child in list(value.items()):
+            if isinstance(child, str) and child and key in markdown_fields:
+                value[key] = render_markdown(child)
+            else:
+                render_markdown_tree(child, markdown_fields)
+    elif isinstance(value, list):
+        for item in value:
+            render_markdown_tree(item, markdown_fields)
+
+
+def collect_local_assets(value) -> None:
+    """Copy local static assets referenced anywhere in conference content."""
+    asset_keys = {"image_path", "logo_path", "photo_path", "map_image", "paper_path", "pdf_path"}
+
+    if isinstance(value, dict):
+        for key, child in value.items():
+            if isinstance(child, str) and child and key in asset_keys:
+                copy_static_asset(child)
+            else:
+                collect_local_assets(child)
+    elif isinstance(value, list):
+        for item in value:
+            collect_local_assets(item)
+
+
+def validate_conference(conference: dict) -> None:
+    """Validate the conference site content."""
+    require_fields(conference, ["site_name", "abbrev", "hero_title", "hero_tagline", "hero_summary", "dates", "location"], "conference content")
+    require_fields(conference.get("primary_cta", {}), ["label", "url"], "conference primary CTA")
+    require_fields(conference.get("secondary_cta", {}), ["label", "url"], "conference secondary CTA")
+
+
 # ── Main build ─────────────────────────────────────────────────────────────
 
 def build(output_dir: str = "dist") -> None:
@@ -411,7 +458,7 @@ def build(output_dir: str = "dist") -> None:
     BUILD_DIR = output_path(output_dir)
 
     print("=" * 55)
-    print(f"  Building portfolio site → {BUILD_DIR.relative_to(ROOT)}/")
+    print(f"  Building conference site → {BUILD_DIR.relative_to(ROOT)}/")
     print("=" * 55)
 
     # ── 1. Load config ──────────────────────────────────────────────────
@@ -419,103 +466,28 @@ def build(output_dir: str = "dist") -> None:
         sys.exit(f"Error: {CONFIG_FILE} not found. Are you running from the repo root?")
 
     config = load_yaml(CONFIG_FILE)
-    print(f"\n[1/6] Loaded config:  {CONFIG_FILE.name}")
+    print(f"\n[1/4] Loaded config:  {CONFIG_FILE.name}")
 
     theme       = config.get("theme", "light")
     theme_toggle = config.get("theme_toggle", {})
-    site_title  = config.get("site_title", "My Portfolio")
+    site_title  = config.get("site_title", "Conference website")
     google_site_verification = config.get("google_site_verification", "")
-    student_rel = config.get("student_file", "content/example_student.yaml")
-    project_rel = config.get("projects", [])
-    writing_rel = config.get("writing_posts", config.get("blog_posts", []))
-    scholarship_rel = config.get("scholarship_file", "content/scholarship.yaml")
-    cv_rel = config.get("cv_file", "content/cv.yaml")
-    about_rel = config.get("about_file", "content/about.yaml")
+    conference_rel = config.get("conference_file", "content/conference.yaml")
 
     theme_path = STATIC_DIR / "css" / "themes" / f"{theme}.css"
     if not theme_path.exists():
         sys.exit(f"Error: theme '{theme}' not found at static/css/themes/{theme}.css")
     asset_version = stylesheet_fingerprint(theme, theme_toggle)
 
-    # ── 2. Load student profile ─────────────────────────────────────────
-    student_path = repo_path(student_rel, "student")
-    if not student_path.exists():
-        sys.exit(f"Error: student file '{student_rel}' not found.")
+    # ── 2. Load conference content ─────────────────────────────────────
+    conference_path = repo_path(conference_rel, "conference")
+    if not conference_path.exists():
+        sys.exit(f"Error: conference file '{conference_rel}' not found.")
 
-    student = load_yaml(student_path)
-    # Convert the about field from Markdown to HTML so students can use
-    # standard Markdown syntax: blank lines for paragraphs, *italic*, **bold**, etc.
-    markdown_field(student, "about")
-    if student.get("featured_video_url"):
-        student["featured_video_embed_url"] = youtube_embed_url(
-            student["featured_video_url"],
-            student.get("featured_video_start_seconds", 0),
-            student.get("featured_video_captions", False),
-            student.get("featured_video_captions_lang", "en"),
-        )
-    validate_student(student)
-    print(f"[2/6] Loaded student: {student_path.name}  ({student.get('name', '?')})")
-
-    # ── 3. Load project files ───────────────────────────────────────────
-    projects = []
-    for rel in project_rel:
-        p = repo_path(rel, "project")
-        if not p.exists():
-            print(f"  [warn] Project file not found, skipping: {rel}")
-            continue
-        projects.append(load_yaml(p))
-        print(f"       project: {p.name}")
-
-    validate_projects(projects)
-    print(f"[3/6] Loaded {len(projects)} project(s).")
-
-
-    # ── 4. Load writing files ───────────────────────────────────────────
-    writing_posts = []
-    used_post_slugs = set()
-    for rel in writing_rel:
-        p = repo_path(rel, "writing")
-        if not p.exists():
-            print(f"  [warn] Writing file not found, skipping: {rel}")
-            continue
-
-        post = load_yaml(p)
-        post["raw_content"] = post.get("content", "")
-        post["slug"] = unique_slug(post.get("slug") or slugify(p.stem), used_post_slugs)
-        post["source_path"] = rel
-        post["permalink"] = f"writing/{post['slug']}/"
-        if "has_original_post" not in post:
-            post["has_original_post"] = bool(post.get("post_url") or post.get("original_post_url"))
-        if not post.get("original_post_url") and post.get("post_url"):
-            post["original_post_url"] = post["post_url"]
-        validate_writing_post(post)
-
-        # convert markdown to HTML for content
-        markdown_field(post, "content")
-
-        writing_posts.append(post)
-        print(f"       writing: {p.name}")
-    print(f"[4/6] Loaded {len(writing_posts)} writing post(s).")
-
-    # ── 5. Load page content ────────────────────────────────────────────
-    scholarship = load_optional_yaml(scholarship_rel, "Scholarship")
-    cv = load_optional_yaml(cv_rel, "CV")
-    about_page = load_optional_yaml(about_rel, "About")
-
-    for field in ["summary", "abstract", "future_directions"]:
-        markdown_field(scholarship, field)
-    for project in scholarship.get("additional_projects", []):
-        for field in ["summary", "role", "abstract", "funding"]:
-            markdown_field(project, field)
-    for section in scholarship.get("sections", []):
-        markdown_field(section, "body")
-    for item in cv.get("timeline", []):
-        markdown_field(item, "description")
-    for award in cv.get("awards", []):
-        markdown_field(award, "description")
-    for section in about_page.get("sections", []):
-        markdown_field(section, "body")
-    print("[5/6] Loaded page content.")
+    conference = load_yaml(conference_path)
+    render_markdown_tree(conference)
+    validate_conference(conference)
+    print(f"[2/4] Loaded conference content: {conference_path.name}")
 
     # ── 6. Render HTML ──────────────────────────────────────────────────
     clean_build_dir()
@@ -531,12 +503,7 @@ def build(output_dir: str = "dist") -> None:
         "asset_version": asset_version,
         "theme_toggle": theme_toggle,
         "google_site_verification": google_site_verification,
-        "student": student,
-        "projects": projects,
-        "writing_posts": writing_posts,
-        "scholarship": scholarship,
-        "cv": cv,
-        "about_page": about_page,
+        "conference": conference,
     }
 
     print("\n      Rendering pages …")
@@ -549,58 +516,33 @@ def build(output_dir: str = "dist") -> None:
         site_root="",
         show_hero=True,
     )
-    render_page(
-        env,
-        "scholarship.html",
-        "scholarship/index.html",
-        **base_context,
-        current_page="scholarship",
-        site_root="../",
-        show_hero=False,
-    )
-    render_page(
-        env,
-        "cv.html",
-        "cv/index.html",
-        **base_context,
-        current_page="cv",
-        site_root="../",
-        show_hero=False,
-    )
-    render_page(
-        env,
-        "writing.html",
-        "writing/index.html",
-        **base_context,
-        current_page="writing",
-        site_root="../",
-        show_hero=False,
-    )
-    render_page(
-        env,
-        "about.html",
-        "about/index.html",
-        **base_context,
-        current_page="about",
-        site_root="../",
-        show_hero=False,
-    )
-    for post in writing_posts:
+    page_routes = [
+        ("about", "about/index.html"),
+        ("program", "program/index.html"),
+        ("speakers", "speakers/index.html"),
+        ("venue", "venue/index.html"),
+        ("registration", "registration/index.html"),
+        ("contact", "contact/index.html"),
+    ]
+    for page_name, output_rel in page_routes:
+        page = conference.get("pages", {}).get(page_name)
+        if not page:
+            sys.exit(f"Error: conference page '{page_name}' is missing from {conference_path.name}.")
         render_page(
             env,
-            "post.html",
-            f"writing/{post['slug']}/index.html",
+            "page.html",
+            output_rel,
             **base_context,
-            post=post,
-            current_page="writing",
-            site_root="../../",
+            page=page,
+            current_page=page_name,
+            site_root="../",
             show_hero=False,
         )
-    print("[6/6] Rendered site pages.")
+    print("[3/4] Rendered site pages.")
 
     # ── 6. Copy static assets ───────────────────────────────────────────
     print("\n      Writing static assets …")
-    copy_referenced_assets(student, projects, writing_posts, scholarship)
+    collect_local_assets(conference)
     write_combined_styles(theme, theme_toggle)
     (BUILD_DIR / ".nojekyll").write_text("", encoding="utf-8")
     print("  wrote   .nojekyll")

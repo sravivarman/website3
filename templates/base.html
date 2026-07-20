@@ -8,104 +8,58 @@
   {% endif %}
   <title>{{ site_title }}</title>
 
-  {% if theme_toggle.enabled %}
-  <script>
-    (() => {
-      const storageKey = "arkeshdas-theme-mode";
-      const lightTheme = "{{ theme_toggle.light_theme|default(theme) }}";
-      const darkTheme = "{{ theme_toggle.dark_theme }}";
-      const savedMode = (() => {
-        try {
-          return localStorage.getItem(storageKey);
-        } catch {
-          return null;
-        }
-      })();
-      const mode = savedMode === "dark" ? "dark" : "light";
-      const activeTheme = mode === "dark" ? darkTheme : lightTheme;
-      if (activeTheme && activeTheme !== "{{ theme }}") {
-        document.documentElement.dataset.siteTheme = activeTheme;
-      }
-      document.documentElement.dataset.themeMode = mode;
-    })();
-  </script>
-  {% endif %}
-
   <!-- Built stylesheet: base layout plus the configured theme -->
   <link rel="stylesheet" href="{{ site_root }}css/site.css?v={{ asset_version }}" />
 </head>
-<body>
+<body class="conference-site">
 
   <header class="site-header">
     <nav class="site-nav">
       <a href="{{ site_root or './' }}">Home</a>
-      <a href="{{ site_root }}scholarship/">Scholarship</a>
-      <a href="{{ site_root }}cv/">CV</a>
-      <a href="{{ site_root }}writing/">Writing</a>
       <a href="{{ site_root }}about/">About</a>
-      <a href="{{ site_root }}#contact">Contact</a>
-      {% if theme_toggle.enabled %}
-      <button
-        type="button"
-        class="theme-toggle"
-        data-theme-toggle
-        data-light-theme="{{ theme_toggle.light_theme|default(theme) }}"
-        data-dark-theme="{{ theme_toggle.dark_theme }}"
-        data-light-label="{{ theme_toggle.light_label|default('Light') }}"
-        data-dark-label="{{ theme_toggle.dark_label|default('Dark') }}"
-        aria-pressed="false"
-      >
-        <span class="theme-toggle-dot" aria-hidden="true"></span>
-        <span class="theme-toggle-label">{{ theme_toggle.light_label|default('Light') }}</span>
-      </button>
-      {% endif %}
+      <a href="{{ site_root }}program/">Program</a>
+      <a href="{{ site_root }}speakers/">Speakers</a>
+      <a href="{{ site_root }}venue/">Venue</a>
+      <a href="{{ site_root }}registration/">Registration</a>
+      <a href="{{ site_root }}contact/">Contact</a>
     </nav>
 
     {% if show_hero %}
-    <div class="hero">
-      {% if student.headshot %}
-      <div class="hero-media">
-        <img src="{{ student.headshot }}" alt="Headshot of {{ student.name }}" class="hero-headshot">
-      </div>
-      {% endif %}
-
-      <div class="hero-copy">
-        <p class="hero-role">{{ student.role }}</p>
-        <h1>{{ student.name }}</h1>
-        {% if student.current_role %}
-        <p class="hero-current">{{ student.current_role }}</p>
+    <div class="conference-hero">
+      <div class="conference-hero-copy">
+        <p class="hero-role">{{ conference.abbrev }}</p>
+        <h1>{{ conference.hero_title }}</h1>
+        <p class="conference-hero-tagline">{{ conference.hero_tagline }}</p>
+        {% if conference.hero_summary %}
+        <div class="conference-summary">{{ conference.hero_summary | safe }}</div>
         {% endif %}
-        {% if student.headline %}
-        <p class="hero-headline">{{ student.headline }}</p>
-        {% endif %}
-        <div class="hero-tagline">{{ student.tagline | replace('\n', '<br>') | safe }}</div>
+        <div class="conference-meta">
+          <span class="conference-chip">{{ conference.dates }}</span>
+          <span class="conference-chip">{{ conference.location }}</span>
+          <span class="conference-chip">{{ conference.host }}</span>
+        </div>
         <div class="hero-actions">
-          <a href="#projects" class="btn btn-primary">View Projects</a>
-          <a href="#contact" class="btn btn-secondary">Contact</a>
-          {% if student.github %}
-          <a href="{{ student.github }}" target="_blank" rel="noopener" class="btn btn-secondary btn-compact">
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.53 2.87 8.38 6.84 9.74.5.1.68-.22.68-.49 0-.24-.01-.88-.01-1.73-2.78.62-3.37-1.37-3.37-1.37-.45-1.19-1.11-1.51-1.11-1.51-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.93.85.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.28 2.75 1.05A9.3 9.3 0 0 1 12 6.99c.85 0 1.71.12 2.51.34 1.91-1.33 2.75-1.05 2.75-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.81-4.57 5.07.36.32.68.95.68 1.92 0 1.38-.01 2.49-.01 2.83 0 .27.18.59.69.49A10.14 10.14 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z" />
-            </svg>
-            GitHub
-          </a>
-          {% endif %}
-          {% if student.linkedin %}
-          <a href="{{ student.linkedin }}" target="_blank" rel="noopener" class="btn btn-secondary btn-compact">
-            <svg class="btn-icon" viewBox="0 0 24 24" aria-hidden="true">
-              <path d="M6.94 8.98H3.75V20h3.19V8.98ZM5.35 4a1.85 1.85 0 1 0 0 3.7 1.85 1.85 0 0 0 0-3.7Zm14.9 9.85c0-3.15-1.68-4.61-3.92-4.61-1.81 0-2.62.99-3.07 1.69V8.98h-3.18V20h3.18v-6.15c0-1.62.31-3.18 2.31-3.18 1.97 0 2 1.84 2 3.28V20h3.18v-6.15Z" />
-            </svg>
-            LinkedIn
-          </a>
-          {% endif %}
-          {% if student.paper_url %}
-          <a href="{{ student.paper_url }}" target="_blank" rel="noopener" class="btn btn-accent btn-compact">
-            <span aria-hidden="true">PDF</span>
-            Paper
-          </a>
-          {% endif %}
+          <a href="{{ site_root }}{{ conference.primary_cta.url }}" class="btn btn-primary">{{ conference.primary_cta.label }}</a>
+          <a href="{{ site_root }}{{ conference.secondary_cta.url }}" class="btn btn-secondary">{{ conference.secondary_cta.label }}</a>
         </div>
       </div>
+
+      <aside class="conference-hero-panel" aria-label="Conference highlights">
+        <div class="conference-hero-spotlight">
+          <p class="writing-meta">Conference snapshot</p>
+          <h2>{{ conference.site_name }}</h2>
+          <p>{{ conference.hero_tagline }}</p>
+        </div>
+
+        <div class="conference-stat-grid">
+          {% for stat in conference.stats %}
+          <div class="conference-stat-card">
+            <span class="conference-stat-value">{{ stat.value }}</span>
+            <span class="conference-stat-label">{{ stat.label }}</span>
+          </div>
+          {% endfor %}
+        </div>
+      </aside>
     </div>
     {% endif %}
   </header>
@@ -117,60 +71,7 @@
 
   <!-- ===== Footer ===== -->
   <footer class="site-footer">
-    <p>&copy; 2026 <a href="https://github.com/arkeshdas/arkeshdas.github.io" target="_blank" rel="noopener">Arkesh Das</a>.</p>
+    <p>&copy; 2026 {{ conference.abbrev }}. {{ conference.host }}.</p>
   </footer>
-
-  {% if theme_toggle.enabled %}
-  <script>
-    (() => {
-      const storageKey = "arkeshdas-theme-mode";
-      const toggle = document.querySelector("[data-theme-toggle]");
-      if (!toggle) return;
-
-      const lightTheme = toggle.dataset.lightTheme;
-      const darkTheme = toggle.dataset.darkTheme;
-      const lightLabel = toggle.dataset.lightLabel || "Light";
-      const darkLabel = toggle.dataset.darkLabel || "Dark";
-      const label = toggle.querySelector(".theme-toggle-label");
-
-      const getSavedMode = () => {
-        try {
-          return localStorage.getItem(storageKey);
-        } catch {
-          return null;
-        }
-      };
-
-      const saveMode = (mode) => {
-        try {
-          localStorage.setItem(storageKey, mode);
-        } catch {
-          // The toggle still works for the current page if storage is blocked.
-        }
-      };
-
-      const applyMode = (mode) => {
-        const isDark = mode === "dark";
-        const activeTheme = isDark ? darkTheme : lightTheme;
-        if (activeTheme && activeTheme !== "{{ theme }}") {
-          document.documentElement.dataset.siteTheme = activeTheme;
-        } else {
-          delete document.documentElement.dataset.siteTheme;
-        }
-        document.documentElement.dataset.themeMode = mode;
-        toggle.setAttribute("aria-pressed", String(isDark));
-        if (label) label.textContent = isDark ? darkLabel : lightLabel;
-      };
-
-      applyMode(getSavedMode() === "dark" ? "dark" : "light");
-
-      toggle.addEventListener("click", () => {
-        const nextMode = document.documentElement.dataset.themeMode === "dark" ? "light" : "dark";
-        saveMode(nextMode);
-        applyMode(nextMode);
-      });
-    })();
-  </script>
-  {% endif %}
 </body>
 </html>

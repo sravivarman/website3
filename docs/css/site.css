@@ -50,7 +50,7 @@ img {
   top: 0.75rem;
   left: 50%;
   transform: translateX(-50%);
-  width: min(var(--page-max), calc(100% - 2.5rem));
+  width: min(var(--page-max), calc(100% - 1.5rem));
   padding: 0.55rem 0.9rem;
   border-radius: 999px;
   z-index: 1100;
@@ -270,6 +270,51 @@ img {
   overflow: hidden;
 }
 
+
+@media (max-width: 1200px) {
+  body.conference-site .site-nav {
+    width: min(var(--page-max), calc(100% - 1rem));
+    gap: 0.4rem;
+    padding: 0.42rem 0.65rem;
+    font-size: 0.73rem;
+  }
+
+  body.conference-site .site-brand {
+    font-size: 0.84rem;
+    letter-spacing: 0.1em;
+  }
+
+  body.conference-site .site-nav-links {
+    gap: 0.55rem;
+  }
+
+  body.conference-site .site-nav a,
+  body.conference-site .site-nav summary {
+    padding: 0.36rem 0.58rem;
+  }
+}
+
+@media (max-width: 1080px) {
+  body.conference-site .site-nav {
+    gap: 0.3rem;
+    padding: 0.38rem 0.55rem;
+    font-size: 0.7rem;
+  }
+
+  body.conference-site .site-brand {
+    font-size: 0.8rem;
+    letter-spacing: 0.08em;
+  }
+
+  body.conference-site .site-nav-links {
+    gap: 0.42rem;
+  }
+
+  body.conference-site .site-nav a,
+  body.conference-site .site-nav summary {
+    padding: 0.32rem 0.5rem;
+  }
+}
 .featured-video-frame iframe {
   width: 100%;
   height: 100%;

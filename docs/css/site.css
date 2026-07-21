@@ -69,6 +69,17 @@ img {
   font-size: 0.92rem;
   font-weight: 800;
   letter-spacing: 0.12em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.4rem 0.78rem;
+  border-radius: 999px;
+  border: 1px solid transparent;
+  line-height: 1;
+}
+
+.site-nav .site-brand:hover {
+  text-decoration: none;
 }
 
 .site-nav-links {
@@ -1495,6 +1506,34 @@ body.conference-site .conference-summary p + p {
   margin-top: 0.9rem;
 }
 
+body.conference-site .conference-context-block {
+  margin-bottom: 2.1rem;
+  padding: 1.2rem 1.35rem;
+  border: 2px solid rgba(4, 51, 68, 0.22);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: none;
+}
+
+body.conference-site .conference-context-block h1 {
+  margin: 0;
+  font-family: "Bahnschrift", "Segoe UI Variable Display", "Aptos", sans-serif;
+  font-size: clamp(1.35rem, 2.5vw, 2rem);
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+  color: #0d1a2b;
+  text-align: center;
+}
+
+body.conference-site .conference-context-block .conference-meta {
+  margin-top: 0.85rem;
+}
+
+body.conference-site .conference-context-block .hero-actions {
+  width: 100%;
+  justify-content: center;
+}
+
 body.conference-site .page-summary-wide p {
   margin: 0;
   line-height: 1.68;
@@ -1514,12 +1553,18 @@ body.conference-site .conference-meta {
 
 body.conference-site .conference-chip {
   padding: 0.42rem 0.78rem;
-  border: 1px solid rgba(13, 26, 43, 0.14);
+  border: 1px solid rgb(24 86 107);
   border-radius: 999px;
-  background: rgba(13, 26, 43, 0.03);
-  color: #0d1a2b;
+  background: rgba(255, 255, 255, 0.96);
+  color: #043344;
   font-size: 0.84rem;
   font-weight: 700;
+  letter-spacing: 0;
+  box-shadow: 0 6px 16px rgba(4, 51, 68, 0.08);
+}
+
+body.conference-site .conference-chip strong {
+  color: #043344;
 }
 
 body.conference-site .hero-actions {
@@ -1597,11 +1642,24 @@ body.conference-site .btn-repo {
   color: #043344;
 }
 
+body.conference-site .hero-actions .btn-secondary {
+  background: linear-gradient(135deg, #0a5f74, #043344);
+  border-color: #043344;
+  color: #f8f7f2;
+  box-shadow: 0 10px 24px rgba(13, 26, 43, 0.08);
+}
+
 body.conference-site .btn-secondary:hover,
 body.conference-site .btn-notebook:hover,
 body.conference-site .btn-repo:hover {
   background: rgba(0, 107, 132, 0.12);
   color: #043344;
+}
+
+body.conference-site .hero-actions .btn-secondary:hover {
+  background: linear-gradient(135deg, #0d748d, #043344);
+  border-color: #043344;
+  color: #f8f7f2;
 }
 
 body.conference-site .btn-accent {
@@ -1697,8 +1755,18 @@ body.conference-site .site-footer a {
 }
 
 @media (max-width: 820px) {
+  body.conference-site .conference-context-block {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
   body.conference-site .conference-hero-copy {
     padding: 1.5rem;
+  }
+
+  body.conference-site .hero-actions {
+    width: 100%;
+    justify-content: center;
   }
 
   body.conference-site #organizing-committee .info-grid,
@@ -1786,6 +1854,10 @@ body.conference-site .site-footer a {
 }
 
 @media (max-width: 520px) {
+  body.conference-site .conference-context-block h1 {
+    font-size: clamp(1.12rem, 5.7vw, 1.42rem);
+  }
+
   body.conference-site .conference-hero {
     margin-top: 3rem;
   }
@@ -1851,6 +1923,16 @@ a:hover {
 
 .site-nav a:hover {
   color: #06477d;
+}
+
+.site-nav .site-brand {
+  background: #ffcc00;
+  border-color: rgba(0, 17, 63, 0.22);
+  color: #00113f;
+}
+
+.site-nav .site-brand:hover {
+  color: #00113f;
 }
 
 .theme-toggle {

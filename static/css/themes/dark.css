@@ -28,6 +28,16 @@ a:hover {
   color: #79b8ff;
 }
 
+.site-nav .site-brand {
+  background: #f2cc60;
+  border-color: rgba(18, 18, 18, 0.3);
+  color: #121212;
+}
+
+.site-nav .site-brand:hover {
+  color: #121212;
+}
+
 .theme-toggle {
   background: rgba(255, 255, 255, 0.05);
   border-color: rgba(241, 243, 245, 0.18);

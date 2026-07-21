@@ -31,7 +31,10 @@
   {% if section.cards %}
   <div class="info-grid">
     {% for card in section.cards %}
-    <article class="info-card">
+    <article class="info-card{% if section.title == 'Featured speakers' %} speaker-card{% endif %}">
+      {% if section.title == 'Featured speakers' %}
+      <img src="{{ site_root }}img/placeholder_project_1.png" alt="Dummy speaker image" class="speaker-card-image" />
+      {% endif %}
       {% if card.meta %}
       <p class="writing-meta">{{ card.meta }}</p>
       {% endif %}

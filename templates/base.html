@@ -31,9 +31,14 @@
     {% if show_hero %}
     <div class="conference-hero">
       <div class="conference-hero-copy">
-        <p class="hero-role">{{ conference.abbrev }}</p>
-        <h2>{{ conference.hero_title }}</h2>
-        <p class="conference-hero-tagline">{{ conference.hero_tagline }}</p>
+        <img
+          src="{{ site_root }}{{ conference.hero_image_path|default('img/placeholder_project_1.png') }}"
+          alt="{{ conference.hero_image_alt|default('Conference placeholder image') }}"
+          class="conference-hero-image"
+        />
+        <!--p class="hero-role">{{ conference.abbrev }}</p-->
+        <!--h2>{{ conference.hero_title }}</h2-->
+        <!--p class="conference-hero-tagline">{{ conference.hero_tagline }}</p-->
         <div class="conference-meta">
           <span class="conference-chip"><strong>Date:</strong> {{ conference.dates }}</span>
           <span class="conference-chip"><strong>Venue:</strong> {{ conference.location }}</span>
@@ -44,14 +49,6 @@
           <a href="{{ site_root }}{{ conference.secondary_cta.url }}" class="btn btn-secondary">{{ conference.secondary_cta.label }}</a>
         </div>
       </div>
-
-      <aside class="conference-hero-panel" aria-label="Conference visual">
-        <img
-          src="{{ site_root }}{{ conference.hero_image_path|default('img/placeholder_project_1.png') }}"
-          alt="{{ conference.hero_image_alt|default('Conference placeholder image') }}"
-          class="conference-hero-image"
-        />
-      </aside>
     </div>
     {% endif %}
   </header>

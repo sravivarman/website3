@@ -8,26 +8,17 @@ hero_summary: |
   Modern society is fully dependent on interconnected, essential infrastructure systems, which range from smart grids and transportation networks to high-speed communication pipes. As these systems grow, they face two systemic vulnerabilities: the urgent need to shift to sustainable, zero-emission operations, and the growing threat of sophisticated cyberphysical attacks.
 
   AML-SINR 2027 links these domains by emphasising how Advanced Artificial Intelligence and Machine Learning may be successfully applied to construct next-generation Sustainable Infrastructure and provide unbreakable Network Resilience.
-dates: "2027"
+dates: "14 -15 July, 2027"
 location: "Conference venue TBD"
 host: "Organizing Committee"
 hero_image_path: "img/banner.png"
-hero_image_alt: "Conference banner image"
+hero_image_alt: "AML-SINR 2027 Conference Banner"
 primary_cta:
+  label: "Submit Your Paper"
+  url: "submission/"
+secondary_cta:
   label: "Register Now"
   url: "registration/"
-secondary_cta:
-  label: "Submission"
-  url: "submission/"
-stats:
-  - value: "48"
-    label: "Sessions and presentations"
-  - value: "12"
-    label: "Keynote and invited speakers"
-  - value: "6"
-    label: "Program areas"
-  - value: "3"
-    label: "Core days"
 tracks:
   - title: "Track 1: Applied Machine Learning & Intelligent Core Systems"
     bullets:
@@ -76,47 +67,6 @@ important_dates:
   - label: "Conference dates"
     date: "2027"
     note: "Conference schedule will be announced soon."
-program_preview:
-  - day: "Day 1"
-    title: "Opening and keynote"
-    body: "Welcome session, opening keynote, and program overview."
-  - day: "Day 2"
-    title: "Program sessions"
-    body: "Parallel sessions, invited talks, and presentations."
-  - day: "Day 3"
-    title: "Closing and networking"
-    body: "Wrap-up sessions, discussion, and closing remarks."
-featured_speakers:
-  - name: "Dr. Maya Rodriguez"
-    role: "Opening Keynote"
-    affiliation: "National Renewable Energy Laboratory"
-    talk_title: "When EVs Become Grid Assets"
-    bio: |
-      Dr. Rodriguez studies managed charging, distribution constraints, and the systems-level effects of large-scale EV adoption.
-  - name: "Prof. Daniel Okafor"
-    role: "Invited Speaker"
-    affiliation: "University of Michigan"
-    talk_title: "Distribution Planning for Fast EV Growth"
-    bio: |
-      Prof. Okafor works on feeder modeling, resilience planning, and electrification strategies for urban and suburban networks.
-  - name: "Elena Park"
-    role: "Invited Speaker"
-    affiliation: "Midwest Clean Transportation Coalition"
-    talk_title: "Equity in Charging Access"
-    bio: |
-      Elena Park focuses on deployment policy, access, and community-centered infrastructure programs.
-  - name: "Dr. Ahmed Saleh"
-    role: "Tutorial Lead"
-    affiliation: "Argonne National Laboratory"
-    talk_title: "Digital Twins for Smart Charging"
-    bio: |
-      Dr. Saleh develops digital twin methods for forecasting, charging orchestration, and operational decision support.
-  - name: "Priya Nair"
-    role: "Industry Panelist"
-    affiliation: "GridPulse Energy"
-    talk_title: "Fleet Charging at Commercial Scale"
-    bio: |
-      Priya Nair leads deployment work for depot charging, energy management, and utility coordination with fleet operators.
 sponsors:
   - name: "National Renewable Energy Laboratory"
     level: "Platinum"

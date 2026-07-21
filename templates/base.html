@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -11,31 +12,34 @@
   <!-- Built stylesheet: base layout plus the configured theme -->
   <link rel="stylesheet" href="{{ site_root }}css/site.css?v={{ asset_version }}" />
 </head>
+
 <body class="conference-site">
 
   <header class="site-header">
     <nav class="site-nav">
       <a class="site-brand" href="{{ site_root or './' }}">{{ conference.abbrev }}</a>
-      <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false" aria-controls="site-nav-links">Menu</button>
+      <button type="button" class="menu-toggle" data-menu-toggle aria-expanded="false"
+        aria-controls="site-nav-links">Menu</button>
       <div id="site-nav-links" class="site-nav-links" data-site-nav-links>
-        <a href="{{ site_root or './' }}">Home</a>
-        <a href="{{ site_root }}committee/">Committee</a>
-        <a href="{{ site_root }}speakers/">Speakers</a>
-        <a href="{{ site_root }}submission/">Submission</a>
-        <a href="{{ site_root }}author-guidelines/">Author Guidelines</a>
-        <a href="{{ site_root }}registration/">Registration</a>
-        <a href="{{ site_root }}contact/">Contact</a>
+        <a href="{{ site_root or './' }}" {% if current_page=='home' %}aria-current="page" {% endif %}>Home</a>
+        <a href="{{ site_root }}committee/" {% if current_page=='committee' %}aria-current="page" {% endif
+          %}>Committee</a>
+        <a href="{{ site_root }}speakers/" {% if current_page=='speakers' %}aria-current="page" {% endif %}>Speakers</a>
+        <a href="{{ site_root }}submission/" {% if current_page=='submission' %}aria-current="page" {% endif
+          %}>Submission</a>
+        <a href="{{ site_root }}author-guidelines/" {% if current_page=='author_guidelines' %}aria-current="page" {%
+          endif %}>Author Guidelines</a>
+        <a href="{{ site_root }}registration/" {% if current_page=='registration' %}aria-current="page" {% endif
+          %}>Registration</a>
+        <a href="{{ site_root }}contact/" {% if current_page=='contact' %}aria-current="page" {% endif %}>Contact</a>
       </div>
     </nav>
 
     {% if show_hero %}
     <div class="conference-hero">
       <div class="conference-hero-copy">
-        <img
-          src="{{ site_root }}{{ conference.hero_image_path|default('img/placeholder_project_1.png') }}"
-          alt="{{ conference.hero_image_alt|default('Conference placeholder image') }}"
-          class="conference-hero-image"
-        />
+        <img src="{{ site_root }}{{ conference.hero_image_path|default('img/placeholder_project_1.png') }}"
+          alt="{{ conference.hero_image_alt|default('Conference placeholder image') }}" class="conference-hero-image" />
         <!--p class="hero-role">{{ conference.abbrev }}</p-->
         <!--h2>{{ conference.hero_title }}</h2-->
         <!--p class="conference-hero-tagline">{{ conference.hero_tagline }}</p-->
@@ -45,8 +49,10 @@
           <span class="conference-chip"><strong>Organized by:</strong> {{ conference.host }}</span>
         </div>
         <div class="hero-actions">
-          <a href="{{ site_root }}{{ conference.primary_cta.url }}" class="btn btn-primary">{{ conference.primary_cta.label }}</a>
-          <a href="{{ site_root }}{{ conference.secondary_cta.url }}" class="btn btn-secondary">{{ conference.secondary_cta.label }}</a>
+          <a href="{{ site_root }}{{ conference.primary_cta.url }}" class="btn btn-primary">{{
+            conference.primary_cta.label }}</a>
+          <a href="{{ site_root }}{{ conference.secondary_cta.url }}" class="btn btn-secondary">{{
+            conference.secondary_cta.label }}</a>
         </div>
       </div>
     </div>
@@ -89,4 +95,5 @@
     })();
   </script>
 </body>
+
 </html>

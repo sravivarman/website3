@@ -1394,6 +1394,18 @@ body.conference-site .site-nav a:hover {
   transform: translateY(-1px);
 }
 
+body.conference-site .site-nav a[aria-current="page"] {
+  background: #006b84;
+  color: #f8f7f2;
+  box-shadow: 0 4px 12px rgba(4, 51, 68, 0.22);
+}
+
+body.conference-site .site-nav a[aria-current="page"]:hover {
+  background: #05566b;
+  color: #f8f7f2;
+  transform: none;
+}
+
 body.conference-site .nav-dropdown {
   position: relative;
   flex-shrink: 0;
@@ -1845,6 +1857,12 @@ body.conference-site .site-footer a {
     letter-spacing: 0.06em;
     background: rgba(255, 255, 255, 0.9);
     box-shadow: inset 0 0 0 1px rgba(13, 26, 43, 0.06);
+  }
+
+  body.conference-site .site-nav-links a[aria-current="page"] {
+    background: #006b84;
+    color: #f8f7f2;
+    box-shadow: inset 0 0 0 1px rgba(4, 51, 68, 0.22);
   }
 
   body.conference-site .site-nav-links {

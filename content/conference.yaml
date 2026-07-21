@@ -94,7 +94,7 @@ pages:
     sections:
       - title: "Paper Submission & Guidelines"
         body: |
-          Authors are invited to submit original, unpublished research papers related to Neuro-Symbolic AI, Machine Learning, Deep Learning, Swarm Intelligence, and their interdisciplinary applications. Each paper should clearly identify the research problem, highlight the novelty and significance of the work, describe the methodology and experimental/theoretical approach, present results with appropriate figures and tables, and conclude with key insights and future directions.
+          Authors are invited to submit original, unpublished research papers related to Applied Machine Learning, Sustainable Infrastructure, Network Resilience, and their interdisciplinary applications. Each paper should clearly identify the research problem, highlight the novelty and significance of the work, describe the methodology and experimental/theoretical approach, present results with appropriate figures and tables, and conclude with key insights and future directions.
         bullets:
           - "Each paper can have a maximum of 4 authors."
           - "Author names and affiliations must be entered during submission in the CMT portal and cannot be changed later."

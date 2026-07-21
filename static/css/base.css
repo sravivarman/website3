@@ -1426,7 +1426,7 @@ body.conference-site .conference-hero-panel {
 
 body.conference-site .conference-hero-image {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 18px;
   border: 1px solid rgba(13, 26, 43, 0.12);

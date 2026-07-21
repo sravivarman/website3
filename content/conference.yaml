@@ -11,8 +11,8 @@ hero_summary: |
 dates: "2027"
 location: "Conference venue TBD"
 host: "Organizing Committee"
-hero_image_path: "img/placeholder_project_1.png"
-hero_image_alt: "Placeholder image for conference hero panel"
+hero_image_path: "img/banner.png"
+hero_image_alt: "Conference banner image"
 primary_cta:
   label: "Register Now"
   url: "registration/"

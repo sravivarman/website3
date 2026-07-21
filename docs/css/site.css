@@ -153,7 +153,7 @@ img {
   margin-bottom: 1.1rem;
   padding: 0.35rem 0.75rem;
   border-radius: 999px;
-  font-size: 2rem;
+  font-size: 0.78rem;
   font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -1429,7 +1429,7 @@ body.conference-site .conference-hero-panel {
 
 body.conference-site .conference-hero-image {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 16 / 9;
   object-fit: cover;
   border-radius: 18px;
   border: 1px solid rgba(13, 26, 43, 0.12);

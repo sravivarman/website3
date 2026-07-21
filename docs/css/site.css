@@ -1295,8 +1295,22 @@ body.conference-site a:hover {
 }
 
 body.conference-site .site-header {
+  position: relative;
+  background: transparent;
+  border-bottom: 0;
+}
+
+body.conference-site .site-header::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 0rem;
   background: rgba(248, 247, 242, 0.84);
   border-bottom: 1px solid rgba(13, 26, 43, 0.12);
+  z-index: 1000;
+  pointer-events: none;
 }
 
 body.conference-site .site-main {
@@ -1854,6 +1868,10 @@ body.conference-site .site-footer a {
 }
 
 @media (max-width: 520px) {
+  body.conference-site .site-header::before {
+    height: 3.55rem;
+  }
+
   body.conference-site .conference-context-block h1 {
     font-size: clamp(1.12rem, 5.7vw, 1.42rem);
   }

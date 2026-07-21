@@ -2,8 +2,8 @@
 
 {% block content %}
 <section class="section conference-context-block" aria-label="Conference overview">
-  <h1>{{ conference.site_name }}</h1>
-  <div class="conference-meta">
+  <h1>{{ conference.site_name }} ({{ conference.abbrev }})</h1>
+  <!--div class="conference-meta">
     <span class="conference-chip"><strong>Date:</strong> {{ conference.dates }}</span>
     <span class="conference-chip"><strong>Venue:</strong> {{ conference.location }}</span>
     <span class="conference-chip"><strong>Organized by:</strong> {{ conference.host }}</span>
@@ -11,7 +11,7 @@
   <div class="hero-actions">
     <a href="{{ site_root }}{{ conference.primary_cta.url }}" class="btn btn-primary">{{ conference.primary_cta.label }}</a>
     <a href="{{ site_root }}{{ conference.secondary_cta.url }}" class="btn btn-secondary">{{ conference.secondary_cta.label }}</a>
-  </div>
+  </div-->
 </section>
 
 <section class="section page-intro">
